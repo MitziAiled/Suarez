@@ -24,7 +24,7 @@ $(document).ready(function(){
 function obtener_callejeros() {
 	// COMPLETAR - CONFIGURAR LA SOLICITUD AJAX
 	$.ajax({
-        url: '../B/callejero.php',//donde esta mi web service
+        url: '../BackEnd/callejero.php',//donde esta mi web service
         type: "GET", // MÉTODO DE ACCESO
         dataType: "JSON", // FORMATO DE LOS DATOS
         success: function (data) {
@@ -71,7 +71,7 @@ function alta_callejero() {
     };
 
 	$.ajax({
-        url: '../B/callejero.php',
+        url: '/Suarez/BackEnd/callejero.php',
         type: "POST",
         // COMPLETAR - ENVIAR EL JSON DEL PRODUCTO
         data: JSON.stringify(json_callejero), // CONVERTIR EN STRING JSON
