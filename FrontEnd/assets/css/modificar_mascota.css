@@ -1,0 +1,18 @@
+body{
+    background-image:url("../img/modificar_mascota.jpg");
+    background-size: 100% 100%;
+}
+
+table{
+    border: 2px solid black;
+    margin-top: 50px;
+    margin-left: 180px;
+    font-family: Felix Titling;
+    font-size: small;
+    background-color: white;
+    border-spacing: 15px 15px;
+}
+
+a{
+    color:black;
+}

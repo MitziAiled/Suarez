@@ -1,0 +1,64 @@
+body{
+	background-image:url("../img/registro_callejero.jpg");
+        background-size: 100% 100%;
+}
+
+#letrero{
+    font-family: "Century Gothic";
+    font-weight: bold;
+    text-align: center;
+    font-size: 50px;
+    color:black;
+    background-color:white;
+}
+
+#rectangle{
+    width:560px;
+    height:450px;
+    background-color:#36362C;
+    border-radius: 50px ;
+    margin-top: 30px;
+    margin-left: 650px;
+}
+
+label{
+    color:white;
+    font-family: Felix Titling;
+    margin-left: 30px;
+    position: absolute;
+    margin-top: 20px;
+}
+
+input{
+    margin-left: 30px;
+    width: 230px;
+    height: 30px;
+    border-radius: 50px;
+    position: relative;
+    margin-top: 40px;
+}
+
+.staCan,.condCan,.rasCan{
+    margin-left: 30px;
+    width: 500px;
+    height: 30px;
+    border-radius: 50px;
+    position: relative;
+    margin-top: 40px;
+}
+
+#enviar_formulario{
+    color:white;
+    background-color: #825534;
+    height: 30px;
+    width: 180px;
+    font-family: Felix Titling;
+    border-radius: 50px;
+    position: absolute; 
+    left: 870px;
+    top: 550px;
+}
+
+a{
+    color:white;
+}

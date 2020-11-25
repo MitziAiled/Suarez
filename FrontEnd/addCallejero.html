@@ -1,0 +1,81 @@
+<html>
+    <head>
+        <title>Puppy Rescue: Registro de Callejero</title>
+        <link href="assets/css/add_callejero.css" rel="stylesheet" type="text/css">
+        <LINK href="assets/css/menu.css" rel="stylesheet" type="text/css"/>
+        <script type="text/javascript">
+			function confirmLogout() {
+				if(confirm('¿Deseas cerrar sesion?')) {
+					return true;
+				}
+				else {
+					return false;
+				}
+			}
+
+        </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="/ProyectoSuarez/B/eventos.js"></script>
+    </head>
+    <body>
+    <div id="menu">
+			<ul class="nav">
+                <li>
+                    <a href="">ADOPCIONES</a>
+                </li>
+                <li><a href="">CALLEJEROS</a>
+                    <ul>
+						<li><form action="addCallejero.html"><button>Registrar</button></form></li>
+						<li><form action="consultarCallejeroInstitucion.html"> <button id="btn_consultar">Consultar</button></form></li>
+					</ul>
+                </li>
+				<li><a href="">INSTITUCI&Oacute;N</a>
+                    <ul>
+						<li><form action="./consultaInstitucion2"><button>Modificar Datos</button></form></li>
+					</ul>
+                </li>
+                <li>
+                    <form action="./logout" method="POST">
+                        <button type="submit" value="Log out" onclick="return confirmLogout()">Cerrar Sesion</button>
+                    </form>
+                </li>
+			</ul>
+		</div>
+        <div id="rectangle">
+            <form action="#" method="POST">
+                <table>
+                    <tr>
+                        <td>
+                            <label>Calle:</label>
+                            <input type="text" name="calle" id="calle" required/>
+                            <label>Colonia:</label>
+                            <input type="text" name="colonia" id="colonia" required/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Ciudad:</label>
+                            <input type="text" name="ciudad" id="ciudad" required/>
+                            <label>Estado:</label>
+                            <input type="text" name="estado" id="estado" required/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Rasgos F&iacute;sicos:</label>
+                            <input type="text" class="rasCan" name="rasgos_fisicos" id="rasgos_fisicos" required/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Condición del canino:</label>
+                            <input type="text" class="condCan" name="condicion" id="condicion" required/>
+                        </td>
+                    </tr>
+                </table>
+                <button type="submit" id="enviar_formulario">REGISTRAR</button>
+            </form>
+        </div>
+
+    </body>
+</html>

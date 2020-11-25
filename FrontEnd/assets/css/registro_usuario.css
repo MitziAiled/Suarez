@@ -1,0 +1,92 @@
+body{
+	background-image:url("../img/fondo.jpg");
+        background-size: 100% 100%;
+}
+
+#rectangle{
+    width:600px;
+    height:500px;
+    background-color:#5D907D;
+    border-radius: 50px ;
+    margin-top: 130px;
+    margin-left: 650px;
+}
+
+label{
+    font-family: Felix Titling;
+    margin-left: 30px;
+    position: absolute;
+    margin-top: 20px;
+}
+
+#mascota{
+    margin-left: 250px;
+}
+
+#crear_usuario{
+    margin-left: 130px;
+}
+
+
+.nomUs,.apellUs,.telUs,.dirUs{
+    margin-left: 30px;
+    width: 500px;
+    height: 30px;
+    border-radius: 50px;
+    position: relative;
+    margin-top: 40px;
+}
+
+.cpUs{
+    margin-left: 30px;
+    width: 100px;
+    height: 30px;
+    border-radius: 50px;
+    position: relative;
+    margin-top: 40px;
+}
+
+.emailUs{
+    margin-left: 30px;
+    width: 360px;
+    height: 30px;
+    border-radius: 50px;
+    position: relative;
+    margin-top: 40px;
+}
+
+.Us,.passUs{
+    margin-left: 30px;
+    width: 230px;
+    height: 30px;
+    border-radius: 50px;
+    position: relative;
+    margin-top: 40px;
+}
+
+#volver{
+    background-color: #825534;
+    height: 30px;
+    width: 150px;
+    font-family: Felix Titling;
+    border-radius: 50px;
+    position: absolute; 
+    left: 740px;
+    
+}
+
+#enviar_formulario{
+    color:white;
+    background-color: #825534;
+    height: 30px;
+    width: 150px;
+    font-family: Felix Titling;
+    border-radius: 50px;
+    position: absolute; 
+    left: 970px;
+    top: 590px;
+}
+
+a{
+    color:white;
+}

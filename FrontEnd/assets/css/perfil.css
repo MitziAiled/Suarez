@@ -1,0 +1,74 @@
+body{
+	background-image:url("../img/perfil.jpg");
+        background-size: 100% 100%;
+}
+
+#rectangle{
+    width:600px;
+    height:400px;
+    background-color:#825534;
+    border-radius: 50px ;
+    margin-top: 40px;
+    margin-left: 650px;
+}
+
+label{
+    font-family: Felix Titling;
+    margin-left: 30px;
+    position: absolute;
+    margin-top: 10px;
+}
+
+.nomUs,.apellUs,.telUs,.dirUs{
+    margin-left: 30px;
+    width: 500px;
+    height: 30px;
+    border-radius: 50px;
+    position: relative;
+    margin-top: 40px;
+}
+
+.cpUs{
+    margin-left: 30px;
+    width: 150px;
+    height: 30px;
+    border-radius: 50px;
+    position: relative;
+    margin-top: 40px;
+}
+
+.passUs{
+    margin-left: 30px;
+    width: 230px;
+    height: 30px;
+    border-radius: 50px;
+    position: relative;
+    margin-top: 40px;
+}
+
+#volver{
+    background-color: #825534;
+    height: 30px;
+    width: 150px;
+    font-family: Felix Titling;
+    border-radius: 50px;
+    position: absolute; 
+    left: 740px;
+    
+}
+
+#modificar_formulario{
+    color:white;
+    background-color: #825534;
+    height: 30px;
+    width: 150px;
+    font-family: Felix Titling;
+    border-radius: 50px;
+    position: absolute; 
+    left: 970px;
+    top: 553px;
+}
+
+a{
+    color:white;
+}
