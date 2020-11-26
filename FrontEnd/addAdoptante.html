@@ -13,7 +13,11 @@
 				}
 			}
 
-		</script>
+        </script>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="/Suarez/BackEnd/e.js"></script>
+
     </head>
     <body>
         <div id="menu">
@@ -23,9 +27,9 @@
                 </li>
                 <li><a href="">CALLEJEROS</a>
                     <ul>
-						<li><form action="./registrarCallejero"><button>Registrar</button></form></li>
-						<li><form action="./consultaCallejero"> <button id="btn_consultar">Consultar</button></form></li>
-						<li><form action="./consultaCallejero2"><button>Adoptar</button></form></li>
+						<li><form action="addCallejero.html"><button>Registrar</button></form></li>
+						<li><form action="consultarCallejero.html"><button>Consultar</button></form></li>
+						<li><form action="adoptarCallejero.html"><button>Adoptar</button></form></li>
 					</ul>
                 </li>
 				<li><a href="">INSTITUCI&Oacute;N</a>
@@ -63,7 +67,7 @@
                     <tr>
                         <td>
                             <label>ID Institución:</label>
-                            <input type="text" name="dirAdop" id="id_institucion" value="" /><!--<= $mascota->getRaza(); ?>-->
+                            <input type="text" name="dirAdop" id="id_institucion" value=""/><!--<= $mascota->getRaza(); ?>-->           
                             <label>ID Usuario:</label>
                             <input type="text" name="telAdop" id="id_usuario" value=""/><!--<= $mascota->getColor(); ?>-->
                         </td>
@@ -79,7 +83,32 @@
                     <tr>
                         <td>
                             <label>ID del canino:</label>
-                            <input type="text" name="idCallejero" id="idCallejero" value="" readonly/>
+                            <input type="text" name="idCallejero" id="idCallejero" value="asa" readonly/>
+
+                            <!--script>
+                                
+                                    $(document).ready(function(){
+                                        myFunction();
+                                    });
+                                    
+                                    function myFunction() {
+                                     var x = location.search;
+
+                                    //Mostramos los valores en consola:
+                                    console.log(x);
+                                    //document.getElementById("myURL").value = "8";
+                                    //Creamos la instancia
+                                    var urlParams = new URLSearchParams(x);
+
+                                    //Accedemos a los valores
+                                    var producto = urlParams.get('idcallejeros');
+                                    console.log(producto);
+                                    document.getElementById("idCallejero").value = producto;
+                                }
+                                
+                            </script-->
+
+
                             <label>Nombre de la Mascota:</label>
                             <input type="text" name="nomMasc" id="nomMasc" value=""/><!--<= $mascota->getRasgo(); ?>-->
                         </td>

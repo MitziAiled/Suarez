@@ -14,19 +14,22 @@
 			}
 
         </script>
-         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-         <script src="/Suarez/BackEnd/eventos.js"></script>
+
+        <script type="text/javascript">
+            function confirmDelete() {
+                        if(confirm('Estas seguro de que deseas adoptarlo?')) {
+                            return true;
+                        }
+                        else {
+                            return false;
+                        }
+                    }
+        </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="/Suarez/BackEnd/eventos.js"></script>
+
     </head>
-    <script type="text/javascript">
-    function confirmDelete() {
-				if(confirm('Estas seguro de que deseas adoptarlo?')) {
-					return true;
-				}
-				else {
-					return false;
-				}
-			}
-</script>
+    
     <body>
     <div id="menu">
 			<ul class="nav">
@@ -35,8 +38,8 @@
                 </li>
                 <li><a href="">CALLEJEROS</a>
                     <ul>
-						<li><form action="consultarCallejero.html"> <button id="btn_consultar">Consultar</button></form></li>
-						<li><form action="adoptarCallejero.html"><button id="btn_consultar">Adoptar</button></form></li>
+						<li><form action="consultarCallejero.html"> <button>Consultar</button></form></li>
+						<li><button type="button" id="btn_consulta_adoptar">Adoptar</button></li>
 					</ul>
                 </li>
 				<li><a href="">INSTITUCI&Oacute;N</a>
@@ -68,9 +71,10 @@
                     <th>Estado</th>
                     <th>Rasgos F&iacute;sicos</th>
                     <th>Condici&oacute;n del canino</th>
+                    <th>Adoptar</th>
                 </tr>
             </thead>
-            <tbody id="tabla_consultacallejero"> 
+            <tbody id="tabla_consulta_adoptar"> 
             </tbody>
         </table>
     </body>

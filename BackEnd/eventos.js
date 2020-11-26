@@ -1,5 +1,5 @@
 $(document).ready(function(){
-
+	
 	// accion de registro callejero
 	$("#enviar_formulario").click(function() {
 		alta_callejero();
@@ -13,12 +13,22 @@ $(document).ready(function(){
     //accion de modificar estatus callejero
     $("#btn_modificar_estatus").click(function() {
 		modificar_estatus();
+	});
+	
+	//accion de consultar para adoptar
+    $("#btn_consulta_adoptar").click(function() {
+		obtener_para_adoptar();
     });
 
     //accion de registro adopcion
     $("#btn_registrar_adopcion").click(function() {
 		alta_adopcion();
 	});
+
+	/*prueba
+    $("#btn_id").click(function() {
+		obtener_id();
+	});*/
 });
 
 function obtener_callejeros() {
@@ -87,3 +97,63 @@ function alta_callejero() {
         }
     });
 }
+
+function obtener_para_adoptar() {
+	// COMPLETAR - CONFIGURAR LA SOLICITUD AJAX
+	$.ajax({
+        url: '../BackEnd/callejero.php',//donde esta mi web service
+        type: "GET", // MÉTODO DE ACCESO
+        dataType: "JSON", // FORMATO DE LOS DATOS
+        success: function (data) {
+        	// COMPLETAR - VERIFICAR QUE EXISTAN LOS PRODUCTOS
+            if (data.callejeros) {
+            	// COMPLETAR - LOS DATOS EN LA TABLA
+                consulta_para_adoptar(data.callejeros);
+            }
+        },
+        error: function (xhr, status) {
+            alert("Ha ocurrido un error! " + status);
+            console.log(xhr);
+        }
+    });
+}
+
+function consulta_para_adoptar(callejeros) {
+	let html = '';
+	for (let index in callejeros) {
+		html += "<tr class='text-center'>" +
+				"<td>"+callejeros[index].idcallejeros+"</td>" +
+				"<td>"+callejeros[index].calle+"</td>" +
+				"<td>"+callejeros[index].colonia+"</td>" +
+				"<td>"+callejeros[index].ciudad+"</td>" +
+				"<td>"+callejeros[index].estado+"</td>" +
+				"<td>"+callejeros[index].rasgos_fisicos+"</td>" +
+				"<td>"+callejeros[index].condicion+"</td>" +
+				"<td><a href=addAdoptante.html?idcallejeros="+callejeros[index].idcallejeros+">Adoptar</a></td"+
+			"</tr>";
+	}
+
+	$("#tabla_consulta_adoptar").html(html);
+}
+
+/*function id() {
+	$(document).ready(function(){
+		myFunction();
+	});
+  }
+
+  function obtener_id() {
+	var x = location.search;
+
+   //Mostramos los valores en consola:
+   console.log(x);
+   //document.getElementById("myURL").value = "8";
+   //Creamos la instancia
+   var urlParams = new URLSearchParams(x);
+
+   //Accedemos a los valores
+   var producto = urlParams.get('idcallejeros');
+   console.log(producto);
+   document.getElementById("idCallejero").value = producto;
+   header();
+} */
