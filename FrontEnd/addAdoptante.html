@@ -1,8 +1,8 @@
 <html>
     <head>
         <title>Puppy Rescue: Registro de Mascota</title>
-        <link href="../assets/css/registro_adoptante.css" rel="stylesheet" type="text/css">
-        <LINK href="../assets/css/menu.css" rel="stylesheet" type="text/css"/>
+        <link href="assets/css/registro_adoptante.css" rel="stylesheet" type="text/css">
+        <LINK href="assets/css/menu.css" rel="stylesheet" type="text/css"/>
         <script type="text/javascript">
 			function confirmLogout() {
 				if(confirm('¿Deseas cerrar sesion?')) {
@@ -61,25 +61,11 @@
                 method="POST">
                 <table>
                     <tr>
-                        <td colspan="2">    
-                            <label>Nombre del Adoptante:</label>
-                            <input type="text" name="nomAdop" id="nomAdop" value=""/>
-                        </td>
-                    </tr>
-                    <tr>
                         <td>
-                            <label>Dirección:</label>
-                            <input type="text" name="dirAdop" id="dirAdop" value="" /><!--<= $mascota->getRaza(); ?>-->
-                            <label>Teléfono:</label>
-                            <input type="text" name="telAdop" id="telAdop" value=""/><!--<= $mascota->getColor(); ?>-->
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label>Genero:</label>
-                            <input type="text" name="genAdop" id="genAdop" value=""/><!--<= $mascota->getEdad(); ?>-->
-                            <label>Correo:</label>
-                            <input type="text" name="mailAdop" id="mailAdop" value=""/><!--<= $mascota->getTamano(); ?>-->
+                            <label>ID Institución:</label>
+                            <input type="text" name="dirAdop" id="id_institucion" value="" /><!--<= $mascota->getRaza(); ?>-->
+                            <label>ID Usuario:</label>
+                            <input type="text" name="telAdop" id="id_usuario" value=""/><!--<= $mascota->getColor(); ?>-->
                         </td>
                     </tr>
                     <tr>
@@ -93,7 +79,7 @@
                     <tr>
                         <td>
                             <label>ID del canino:</label>
-                            <input type="text" name="idCallejero" id="idCallejero" value=""/>
+                            <input type="text" name="idCallejero" id="idCallejero" value="" readonly/>
                             <label>Nombre de la Mascota:</label>
                             <input type="text" name="nomMasc" id="nomMasc" value=""/><!--<= $mascota->getRasgo(); ?>-->
                         </td>

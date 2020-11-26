@@ -18,16 +18,7 @@ input{
     height: 20px;
     border-radius: 50px;
     position: relative;
-    margin-top: 35px;
-}
-
-#nomAdop{
-    margin-left: 30px;
-    width: 650px;
-    height: 20px;
-    border-radius: 50px;
-    position: relative;
-    margin-top: 35px;
+    margin-top: 80px;
 }
 
 label{
@@ -35,12 +26,12 @@ label{
     font-family: Felix Titling;
     margin-left: 30px;
     position: absolute;
-    margin-top: 10px;
+    margin-top: 60px;
     height: 15px;
 }
 
 
-#enviar_formulario{
+#btn_registrar_adopcion{
     color:white;
     background-color: #825534;
     height: 30px;
@@ -49,7 +40,7 @@ label{
     border-radius: 50px;
     position: absolute; 
     left: 450px;
-    top: 500px;
+    top: 460px;
 }
 
 #btn_modificar_estatus{
@@ -61,7 +52,7 @@ label{
     border-radius: 50px;
     position: absolute; 
     left: 200px;
-    top: 500px;
+    top: 460px;
 }
 
 a{
