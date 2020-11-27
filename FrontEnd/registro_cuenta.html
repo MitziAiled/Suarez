@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>Puppy Rescue: Registro de Usuario</title>
+        <link href="assets/css/registro_cuenta.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div id="rectangle">
+            <form action="./registro_usuario/create-account" method="POST">
+                <table>
+                    <tr>
+                        <td>
+                            <label>ID:</label>
+                            <input type="text" class="Id" name="Id" autocomplete="off" readonly/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Usuario:</label>
+                            <input type="text" class="Us" name="Us" autocomplete="off" required/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Contrase&ntilde;a:</label>
+                            <input type="text" class="passUs" name="passUs" autocomplete="off" required/>
+                        </td>
+                    </tr>
+                </table>
+                <button type="submit" id="registrar">REGISTRAR</button>
+            </form>
+        </div>
+    </body>
+</html>

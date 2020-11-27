@@ -1,0 +1,46 @@
+body{
+	background-image:url("../img/fondo.jpg");
+        background-size: 100% 100%;
+}
+
+#rectangle{
+    width:500px;
+    height:300px;
+    background-color:#5D907D;
+    border-radius: 50px ;
+    margin-top: 200px;
+    margin-left: 650px;
+}
+
+label{
+    font-family: Felix Titling;
+    margin-left: 30px;
+    position: absolute;
+    margin-top: 20px;
+}
+
+.Id,.Us,.passUs{
+    margin-left: 30px;
+    width: 430px;
+    height: 30px;
+    border-radius: 50px;
+    position: relative;
+    margin-top: 40px;
+}
+
+
+#registrar{
+    color:white;
+    background-color: #825534;
+    height: 30px;
+    width: 150px;
+    font-family: Felix Titling;
+    border-radius: 50px;
+    position: absolute; 
+    left: 840px;
+    top: 450px;
+}
+
+a{
+    color:white;
+}

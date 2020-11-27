@@ -15,7 +15,7 @@ function conectar() {
 	}
 }
 
-// WEB SERVICE CALLEJEROS
+/**********WEB SERVICE CALLEJEROS**********/
 
 function consulta_callejero() {
 	$connect = conectar();
@@ -142,8 +142,22 @@ function eliminar($folio) {
 	return ($sql->rowCount() > 0) ? true : false;
 }*/
 
-//WEB SERVICE INSTITUCION
-
+/**********WEB SERVICE INSTITUCION**********/
+function consulta_institucion() {
+	$connect = conectar();
+	$sql = "SELECT idinstituciones, nombre, telefono, direccion,
+		codigo_postal, nombre_representante, cargo_representante,
+		tipo_institucion, identificacion_tributaria FROM instituciones"; 
+	$query = $connect -> prepare($sql); 
+	$query -> execute(); 
+	$results = $query -> fetchAll(PDO::FETCH_OBJ); 
+	
+	if (is_array($results)) {
+		return $results;
+	} else {
+		return false;
+	}
+}
 
 //WEB SERVICE USUARIOS
 

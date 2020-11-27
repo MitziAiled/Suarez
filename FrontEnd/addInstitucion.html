@@ -1,8 +1,8 @@
 <html>
     <head>
         <title>Puppy Rescue: Registro de Mascota</title>
-        <link href="../assets/css/add_institucion.css" rel="stylesheet" type="text/css">
-        <!--LINK href="../assets/css/menu.css" rel="stylesheet" type="text/css"/-->
+        <link href="assets/css/add_institucion.css" rel="stylesheet" type="text/css">
+        <LINK href="assets/css/menu.css" rel="stylesheet" type="text/css"/>
         <script type="text/javascript">
 			function confirmLogout() {
 				if(confirm('¿Deseas cerrar sesion?')) {
@@ -17,16 +17,7 @@
     </head>
     <body>
         <div id="rectangle1">
-            <form action="
-				<!--?php 
-				if($institucion->getID() == null) {
-					echo './add-institucion';
-				} 
-				else {
-					echo './updateInstitucion';
-				}
-				?-->" 
-                method="POST">
+            <form action="#" method="POST">
                 <label>INSTITUCIÓN:</label>
                 <br><br>
                 <label>Nombre:</label>
@@ -60,7 +51,7 @@
                 <input id="enviar_formulario" type="submit" value="Enviar Datos"/>
             </form>
             <button id="volver">
-                <a href="login.php">Volver</a> <!--Verificar si esto es correcto ya que antes era "../"-->
+                <a href="login.html">Volver</a> <!--Verificar si esto es correcto ya que antes era "../"-->
             </button>
     </body>
 </html>
