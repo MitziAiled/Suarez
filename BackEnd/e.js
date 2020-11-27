@@ -22,15 +22,15 @@ function obtener_id() {
    var urlParams = new URLSearchParams(x);
 
    //Accedemos a los valores
-   var producto = urlParams.get('idCallejeros');
+   var producto = urlParams.get('id');
    console.log(producto);
-   document.getElementById("idCallejero").value = producto;
+   document.getElementById("idcallejeros").value = producto;
 } 
 
 function actualizar_estatus() {
 	// COMPLETAR - DEFINIR EL JSON A ENVIAR CON LOS DATOS DEL PRODUCTO
 	let json_calljero = {
-        idcallejeros: $("#idCallejero").val()
+        idcallejeros: $("#idcallejeros").val()
     };
 
 	$.ajax({

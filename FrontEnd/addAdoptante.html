@@ -27,7 +27,6 @@
                 </li>
                 <li><a href="">CALLEJEROS</a>
                     <ul>
-						<li><form action="addCallejero.html"><button>Registrar</button></form></li>
 						<li><form action="consultarCallejero.html"><button>Consultar</button></form></li>
 						<li><form action="adoptarCallejero.html"><button>Adoptar</button></form></li>
 					</ul>
@@ -53,12 +52,11 @@
 			</ul>
 		</div>
         <div id="rectangle">
-            <form action="#"
-                method="POST">
+            <form action="#" method="POST">
                 <table>
                     <tr>
                         <td>
-                            <label>ID Institución:</label>
+                            <label>ID Instituci&oacute;n:</label>
                             <input type="text" name="dirAdop" id="id_institucion" value=""/><!--<= $mascota->getRaza(); ?>-->           
                             <label>ID Usuario:</label>
                             <input type="text" name="telAdop" id="id_usuario" value=""/><!--<= $mascota->getColor(); ?>-->
@@ -66,7 +64,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <label>Ocupación:</label>
+                            <label>Ocupaci&oacute;n:</label>
                             <input type="text" name="ocupAdop" id="ocupAdop" value=""/><!--<= $mascota->getEsterilizacion(); ?>-->
                             <label>Ingresos:</label>
                             <input type="text" name="ingAdop" id="ingAdop" value=""/><!--<= $mascota->getCondicion(); ?>-->
@@ -75,13 +73,13 @@
                     <tr>
                         <td>
                             <label>ID del canino:</label>
-                            <input type="text" name="idCallejero" id="idCallejero" value="asa" readonly/>
+                            <input type="text" name="idcallejeros" id="idcallejeros" value="asa" readonly/>
                             <label>Nombre de la Mascota:</label>
                             <input type="text" name="nomMasc" id="nomMasc" value=""/><!--<= $mascota->getRasgo(); ?>-->
                         </td>
                     </tr>
                 </table>
-                <input id="btn_registrar_adopcion" type="submit" value="Enviar Datos"/>
+                <!--input id="btn_registrar_adopcion" type="submit" value="Enviar Datos"/-->
                 <input id="btn_modificar_estatus" type="submit" value="Modificar Estatus"/>
             </form>
             
