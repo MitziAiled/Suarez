@@ -53,15 +53,7 @@
 			</ul>
 		</div>
         <div id="rectangle">
-            <form action="
-				<!--php 
-				if($mascota->getID() == null) {
-					echo './add-mascota';
-				} 
-				else {
-					echo './updateMascota';
-				}
-				?-->" 
+            <form action="#"
                 method="POST">
                 <table>
                     <tr>
@@ -84,31 +76,6 @@
                         <td>
                             <label>ID del canino:</label>
                             <input type="text" name="idCallejero" id="idCallejero" value="asa" readonly/>
-
-                            <!--script>
-                                
-                                    $(document).ready(function(){
-                                        myFunction();
-                                    });
-                                    
-                                    function myFunction() {
-                                     var x = location.search;
-
-                                    //Mostramos los valores en consola:
-                                    console.log(x);
-                                    //document.getElementById("myURL").value = "8";
-                                    //Creamos la instancia
-                                    var urlParams = new URLSearchParams(x);
-
-                                    //Accedemos a los valores
-                                    var producto = urlParams.get('idcallejeros');
-                                    console.log(producto);
-                                    document.getElementById("idCallejero").value = producto;
-                                }
-                                
-                            </script-->
-
-
                             <label>Nombre de la Mascota:</label>
                             <input type="text" name="nomMasc" id="nomMasc" value=""/><!--<= $mascota->getRasgo(); ?>-->
                         </td>
@@ -117,6 +84,7 @@
                 <input id="btn_registrar_adopcion" type="submit" value="Enviar Datos"/>
                 <input id="btn_modificar_estatus" type="submit" value="Modificar Estatus"/>
             </form>
+            
         </div>
     </body>
 </html>

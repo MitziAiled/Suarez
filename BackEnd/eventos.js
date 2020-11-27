@@ -9,21 +9,11 @@ $(document).ready(function(){
 	$("#btn_consultar").click(function() {
 		obtener_callejeros();
     });
-
-    //accion de modificar estatus callejero
-    $("#btn_modificar_estatus").click(function() {
-		modificar_estatus();
-	});
 	
 	//accion de consultar para adoptar
     $("#btn_consulta_adoptar").click(function() {
 		obtener_para_adoptar();
     });
-
-    //accion de registro adopcion
-    $("#btn_registrar_adopcion").click(function() {
-		alta_adopcion();
-	});
 
 	/*prueba
     $("#btn_id").click(function() {
@@ -129,7 +119,7 @@ function consulta_para_adoptar(callejeros) {
 				"<td>"+callejeros[index].estado+"</td>" +
 				"<td>"+callejeros[index].rasgos_fisicos+"</td>" +
 				"<td>"+callejeros[index].condicion+"</td>" +
-				"<td><a href=addAdoptante.html?idcallejeros="+callejeros[index].idcallejeros+">Adoptar</a></td"+
+				"<td><a href=addAdoptante.html?id="+callejeros[index].idcallejeros+">Adoptar</a></td"+
 			"</tr>";
 	}
 
