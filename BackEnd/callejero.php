@@ -30,19 +30,13 @@ require_once("base_de_datos.php");
 
         $datos_recibidos = json_decode(file_get_contents("php://input"));  
         
-        //Paso 1. Ontener valores de la solicitud
+        //Paso 1. Obtener valores de la solicitud
         $calle = $datos_recibidos->calle;
         $colonia = $datos_recibidos->colonia;
         $ciudad = $datos_recibidos->ciudad;
         $estado = $datos_recibidos->estado;
         $rasgos_fisicos = $datos_recibidos->rasgos_fisicos;
         $condicion = $datos_recibidos->condicion;
-        /*$calle = $_POST['calle'];
-        $colonia = $_POST['colonia'];
-        $ciudad = $_POST['ciudad'];
-        $estado = $_POST['estado'];
-        $rasgos_fisicos = $_POST['rasgos'];
-        $condicion = $_POST['condicion'];*/
 
         //registrar en la BD
         $resultado = alta_callejero($calle, $colonia, $ciudad, $estado, $rasgos_fisicos, $condicion);

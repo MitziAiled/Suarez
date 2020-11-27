@@ -101,7 +101,11 @@ function alta_adopcion($idcallejeros, $idusuarios, $idinstituciones, $nombre_mas
 
     $sql->execute();
 
-    $connect = null;           
+	$id_insertado = $connect->lastInsertId();
+
+	$connect = null;
+
+	return ($id_insertado) ? true : false;          
 }
 
 function modificar_estatus($idcallejeros) {

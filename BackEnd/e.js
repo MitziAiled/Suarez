@@ -49,3 +49,32 @@ function actualizar_estatus() {
         }
     });
 }
+
+function alta_adopcion() {
+	// COMPLETAR - DEFINIR EL JSON A ENVIAR CON LOS DATOS DEL PRODUCTO
+	let json_adoptante = {
+        idcallejeros: $("#idcallejeros").val(),
+        idusuarios:$("#idusuarios").val(),
+        idinstituciones:$("#idinstituciones").val(),
+        nombre_mascota:$("#nombre_mascota").val(),
+        ocupacion_adoptante:$("#ocupacion_adoptante").val(),
+        ingresos_adoptante:$("#ingresos_adoptante").val()
+    };
+
+	$.ajax({
+        url: '/Suarez/BackEnd/adoptante.php',
+        type: "POST",
+        // COMPLETAR - ENVIAR EL JSON DEL PRODUCTO
+        data: JSON.stringify(json_adoptante), // CONVERTIR EN STRING JSON
+        success: function (data) {
+        	// COMPLETAR - PROCESAR RESPUESTA
+            alert(data.mensaje);
+            //cargar de nuevo la página
+            location.reload();
+        },
+        error: function (xhr, status) {
+            alert("Ha ocurrido un error! " + status);
+            console.log(xhr);
+        }
+    });
+}
