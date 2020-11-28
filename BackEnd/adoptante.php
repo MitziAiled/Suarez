@@ -37,6 +37,29 @@ require_once("base_de_datos.php");
             echo json_encode($respuesta);
         }
 
+    }else if($_SERVER['REQUEST_METHOD'] == 'GET'){
+        //Consultar por id
+        //Consultar todo
+        $adopciones = consulta_adopcion();
+
+        if(is_array($adopciones)){ //si tiene elementos
+            //si hay elementos
+            header ('Content-Type:application/json'); //La respuesta es en json
+            
+            $array_adopciones = [];
+            foreach($adopciones as $item){//obtener todo del resultado de la bd
+                $array_adopciones[] = $item; //agrega cada callejero al arreglo de callejeros
+            }
+
+            $respuesta = [
+                "mensaje" => "Consulta exitosa",
+                "callejeros" => $array_adopciones
+            ];
+            echo json_encode($respuesta);
+        }
+
+        //Algoritmo o proceso
+    
     }else{
         //Procesar error y responder
     }

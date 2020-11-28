@@ -159,6 +159,40 @@ function consulta_institucion() {
 	}
 }
 
+
+/******************WEB SERVICE ADOPCIONES********************/ 
+function consulta_adopcion() {
+	$connect = conectar();
+	$sql = "SELECT
+	adopciones.idadopciones,
+	usuarios.nombre,
+	usuarios.apellidos,
+	usuarios.direccion,
+	usuarios.codigo_postal,
+	usuarios.telefono,
+	usuarios.genero,
+	usuarios.email,
+	adopciones.ocupacion_adoptante,
+	adopciones.ingresos_adoptante,
+	adopciones.nombre_mascota,
+	instituciones.nombre
+	FROM adopciones INNER JOIN usuarios
+	ON adopciones.idusuarios = usuarios.idusuarios
+	INNER JOIN instituciones
+	ON adopciones.idinstituciones = instituciones.idinstituciones";
+	
+	$query = $connect -> prepare($sql); 
+	$query -> execute(); 
+	$results = $query -> fetchAll(PDO::FETCH_OBJ); 
+	
+	if (is_array($results)) {
+		return $results;
+	} else {
+		return false;
+	}
+}
+
+
 //WEB SERVICE USUARIOS
 
 ?>

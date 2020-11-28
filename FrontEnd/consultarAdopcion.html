@@ -13,23 +13,27 @@
 				}
 			}
 
-		</script>
+        </script>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="/Suarez/BackEnd/eventos_adopcion.js"></script>
+
     </head>
     <body>
     <div id="menu">
 			<ul class="nav">
                 <li>
-                    <a href="">ADOPCIONES</a>
+                    <form><button id="btn_consulta_adopciones">ADOPCIONES</button></form>
                 </li>
                 <li><a href="">CALLEJEROS</a>
                     <ul>
-						<li><form action="./registrarCallejero"><button>Registrar</button></form></li>
-						<li><form action="./consultaCallejero"> <button id="btn_consultar">Consultar</button></form></li>
+						<li><form action="addCallejero.html"><button>Registrar</button></form></li>
+						<li><form action="consultarCallejeroInstitucion.html"> <button>Consultar</button></form></li>
 					</ul>
                 </li>
 				<li><a href="">INSTITUCI&Oacute;N</a>
                     <ul>
-						<li><form action="./consultaInstitucion2"><button>Modificar Datos</button></form></li>
+						<li><form action="modificarInstitucion.html"><button>Modificar Datos</button></form></li>
 					</ul>
                 </li>
                 <li>
@@ -44,36 +48,21 @@
                 <tr>
                     <th>ID</th>
                     <th>Nombre Adoptante</th>
-                    <th>Direccion</th>
+                    <th>Apellido Adoptante</th>
+                    <th>Direcci&oacute;n</th>
                     <th>CP</th>
-                    <th>Teléfono</th>
+                    <th>Tel&eacute;fono</th>
                     <th>Genero</th>
                     <th>Correo</th>
-                    <th>Ocupación</th>
+                    <th>Ocupaci&oacute;n</th>
                     <th>Ingresos</th>
                     <th>ID canino</th>
                     <th>Nombre de la mascota</th>
-                    <th>Nombre de la Institución</th>
+                    <th>Nombre de la Instituci&oacute;n</th>
                 </tr>
                 
             </thead>
-            <tbody>
-            <!--php foreach ($this->mascota as $m) { ?-->
-                <tr>
-                  <!--td><php echo $m->getID(); ?></td>
-                  <td><php echo $m->getNomMas(); ?></td>
-                  <td><php echo $m->getRaza(); ?></td>
-                  <td><php echo $m->getColor(); ?></td>
-                  <td><php echo $m->getEdad(); ?></td>
-                  <td><php echo $m->getTamano(); ?></td>
-                  <td><php echo $m->getEsterilizacion(); ?></td>
-                  <td><php echo $m->getCondicion(); ?></td>
-                  <td><php echo $m->getRasgo(); ?></td>
-                  <td><php echo $m->getDueno(); ?></td>
-                  <td><php echo $m->getTelefono(); ?></td>
-                  <td><php echo $m->getDireccion(); ?></td-->
-                </tr>
-              <!--php } ?--> 
+            <tbody id="tabla_consulta_adoptados">
             </tbody>
         </table>
     </body>
