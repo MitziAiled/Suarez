@@ -1,8 +1,10 @@
 $(document).ready(function(){
+    obtener_adopciones();
+    console.log("HOLA");
     
     //accion de registro adopcion
     $("#btn_consulta_adopciones").click(function() {
-        //obtener_adopciones();
+        obtener_adopciones();
         console.log("Exito");
 	});
 });
@@ -17,6 +19,7 @@ function obtener_adopciones() {
             // COMPLETAR - VERIFICAR QUE EXISTAN LOS PRODUCTOS
             if (data.adopciones) {
                 // COMPLETAR - LOS DATOS EN LA TABLA
+                 console.log("Estoy aqui");
                 consulta_adopcion(data.adopciones);
             }
         },
@@ -31,18 +34,18 @@ function consulta_adopcion(adopciones) {
     let html = '';
     for (let index in adopciones) {
         html += "<tr class='text-center'>" +
-                "<td>"+adopciones[index].adopciones.idadopciones+"</td>" +
-                "<td>"+adopciones[index].usuarios.nombre+"</td>" +
-                "<td>"+adopciones[index].usuarios.apellidos+"</td>" +
-                "<td>"+adopciones[index].usuarios.direccion+"</td>" +
-                "<td>"+adopciones[index].usuarios.codigo_postal+"</td>" +
-                "<td>"+adopciones[index].usuarios.telefono+"</td>" +
-                "<td>"+adopciones[index].usuarios.genero+"</td>" +
-                "<td>"+adopciones[index].usuarios.email+"</td>" +
-                "<td>"+adopciones[index].adopciones.ocupacion_adoptante+"</td>" +
-                "<td>"+adopciones[index].adopciones.ingresos_adoptante+"</td>" +
-                "<td>"+adopciones[index].adopciones.nombre_mascota+"</td>" +
-                "<td>"+adopciones[index].instituciones.nombre+"</td>" +
+                "<td>"+adopciones[index].idadopciones+"</td>" +
+                "<td>"+adopciones[index].nombre+"</td>" +
+                "<td>"+adopciones[index].apellidos+"</td>" +
+                "<td>"+adopciones[index].direccion+"</td>" +
+                "<td>"+adopciones[index].codigo_postal+"</td>" +
+                "<td>"+adopciones[index].telefono+"</td>" +
+                "<td>"+adopciones[index].genero+"</td>" +
+                "<td>"+adopciones[index].email+"</td>" +
+                "<td>"+adopciones[index].ocupacion_adoptante+"</td>" +
+                "<td>"+adopciones[index].ingresos_adoptante+"</td>" +
+                "<td>"+adopciones[index].nombre_mascota+"</td>" +
+                "<td>"+adopciones[index].nombre+"</td>" +
             "</tr>";
     }
 

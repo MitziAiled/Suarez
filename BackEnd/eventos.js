@@ -29,9 +29,9 @@ function obtener_callejeros() {
         dataType: "JSON", // FORMATO DE LOS DATOS
         success: function (data) {
         	// COMPLETAR - VERIFICAR QUE EXISTAN LOS PRODUCTOS
-            if (data.callejeros) {
+            if (data.calle) {
             	// COMPLETAR - LOS DATOS EN LA TABLA
-                consulta_callejero(data.callejeros);
+                consulta_callejero(data.calle);
             }
         },
         error: function (xhr, status) {
@@ -41,17 +41,17 @@ function obtener_callejeros() {
     });
 }
 
-function consulta_callejero(callejeros) {
+function consulta_callejero(calle) {
 	let html = '';
-	for (let index in callejeros) {
+	for (let index in calle) {
 		html += "<tr class='text-center'>" +
-				"<td>"+callejeros[index].idcallejeros+"</td>" +
-				"<td>"+callejeros[index].calle+"</td>" +
-				"<td>"+callejeros[index].colonia+"</td>" +
-				"<td>"+callejeros[index].ciudad+"</td>" +
-				"<td>"+callejeros[index].estado+"</td>" +
-				"<td>"+callejeros[index].rasgos_fisicos+"</td>" +
-				"<td>"+callejeros[index].condicion+"</td>" +
+				"<td>"+calle[index].idcallejeros+"</td>" +
+				"<td>"+calle[index].calle+"</td>" +
+				"<td>"+calle[index].colonia+"</td>" +
+				"<td>"+calle[index].ciudad+"</td>" +
+				"<td>"+calle[index].estado+"</td>" +
+				"<td>"+calle[index].rasgos_fisicos+"</td>" +
+				"<td>"+calle[index].condicion+"</td>" +
 			"</tr>";
 	}
 
