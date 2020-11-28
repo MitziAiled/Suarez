@@ -145,7 +145,7 @@ function eliminar($folio) {
 /**********WEB SERVICE INSTITUCION**********/
 function consulta_institucion() {
 	$connect = conectar();
-	$sql = "SELECT idinstituciones, nombre, telefono, direccion,
+	$sql = "SELECT idinstituciones, nombre_inst, telefono, direccion,
 		codigo_postal, nombre_representante, cargo_representante,
 		tipo_institucion, identificacion_tributaria FROM instituciones"; 
 	$query = $connect -> prepare($sql); 
@@ -174,12 +174,15 @@ function consulta_adopcion() {
 	usuarios.email,
 	adopciones.ocupacion_adoptante,
 	adopciones.ingresos_adoptante,
+	callejeros.idcallejeros,
 	adopciones.nombre_mascota,
-	instituciones.nombre
+	instituciones.nombre_inst
 	FROM adopciones INNER JOIN usuarios
 	ON adopciones.idusuarios = usuarios.idusuarios
 	INNER JOIN instituciones
-	ON adopciones.idinstituciones = instituciones.idinstituciones";
+	ON adopciones.idinstituciones = instituciones.idinstituciones
+	INNER JOIN callejeros
+	ON adopciones.idcallejeros = callejeros.idcallejeros";
 	
 	$query = $connect -> prepare($sql); 
 	$query -> execute(); 

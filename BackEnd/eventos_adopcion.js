@@ -43,8 +43,9 @@ function consulta_adopcion(adopciones) {
                 "<td>"+adopciones[index].email+"</td>" +
                 "<td>"+adopciones[index].ocupacion_adoptante+"</td>" +
                 "<td>"+adopciones[index].ingresos_adoptante+"</td>" +
+                "<td>"+adopciones[index].idcallejeros+"</td>" +
                 "<td>"+adopciones[index].nombre_mascota+"</td>" +
-                "<td>"+adopciones[index].nombre+"</td>" +
+                "<td>"+adopciones[index].nombre_inst+"</td>" +
             "</tr>";
     }
     $("#tabla_consulta_adoptados").html(html);
