@@ -5,10 +5,6 @@ $(document).ready(function(){
     //accion de registro adopcion
     $("#btn_consulta_adopciones").click(function() {
         obtener_adopciones();
-<<<<<<< HEAD
-=======
-        console.log("Exito");
->>>>>>> 9928cf6c7993c507e9eecb0abb96f67aab835246
 	});
 });
 
