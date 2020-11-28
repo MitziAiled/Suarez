@@ -1,8 +1,14 @@
 $(document).ready(function(){
+    obtener_adopciones();
+    console.log("HOLA");
     
     //accion de registro adopcion
     $("#btn_consulta_adopciones").click(function() {
         obtener_adopciones();
+<<<<<<< HEAD
+=======
+        console.log("Exito");
+>>>>>>> 9928cf6c7993c507e9eecb0abb96f67aab835246
 	});
 });
 
@@ -16,6 +22,7 @@ function obtener_adopciones() {
             // COMPLETAR - VERIFICAR QUE EXISTAN LAS ADOPCIONES
             if (data.adopciones) {
                 // COMPLETAR - LOS DATOS EN LA TABLA
+                 console.log("Estoy aqui");
                 consulta_adopcion(data.adopciones);
             }
         },
