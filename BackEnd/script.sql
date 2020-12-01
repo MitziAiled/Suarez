@@ -15,7 +15,7 @@ CREATE TABLE `perritos`.`callejeros` (
 
 CREATE TABLE `perritos`.`instituciones` (
   `idinstituciones` INT NOT NULL AUTO_INCREMENT,
-  `nombre` VARCHAR(45) NOT NULL,
+  `nombre_inst` VARCHAR(45) NOT NULL,
   `telefono` VARCHAR(10) NOT NULL,
   `direccion` VARCHAR(45) NOT NULL,
   `codigo_postal` VARCHAR(5) NOT NULL,
@@ -34,7 +34,7 @@ CREATE TABLE `perritos`.`usuarios` (
   `telefono` VARCHAR(10) NOT NULL,
   `direccion` VARCHAR(100) NOT NULL,
   `codigo_postal` VARCHAR(5) NOT NULL,
-  `e-mail` VARCHAR(45) NOT NULL,
+  `e_mail` VARCHAR(45) NOT NULL,
   `tipo_usuario` INT NOT NULL,
   PRIMARY KEY (`idusuarios`));
 
@@ -73,4 +73,26 @@ CREATE TABLE `perritos`.`cuentas` (
   CONSTRAINT `id_u`
     FOREIGN KEY (`id`)
     REFERENCES `perritos`.`usuarios` (`idusuarios`));
+
+--Join tabla adoptados
+SELECT
+adopciones.idadopciones,
+usuarios.nombre,
+usuarios.apellidos,
+usuarios.direccion,
+usuarios.codigo_postal,
+usuarios.telefono,
+usuarios.genero,
+usuarios.email,
+adopciones.ocupacion_adoptante,
+adopciones.ingresos_adoptante,
+callejeros.idcallejeros,
+adopciones.nombre_mascota,
+instituciones.nombre_inst
+FROM adopciones INNER JOIN usuarios
+ON adopciones.idusuarios = usuarios.idusuarios
+INNER JOIN instituciones
+ON adopciones.idinstituciones = instituciones.idinstituciones
+INNER JOIN callejeros
+ON adopciones.idcallejeros = callejeros.idcallejeros
 
