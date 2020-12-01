@@ -74,7 +74,7 @@ CREATE TABLE `perritos`.`cuentas` (
     FOREIGN KEY (`id`)
     REFERENCES `perritos`.`usuarios` (`idusuarios`));
 
---Join tabla adoptados
+--Join tabla adoptados, usuarios e instituciones
 SELECT
 adopciones.idadopciones,
 usuarios.nombre,
