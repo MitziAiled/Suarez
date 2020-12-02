@@ -34,7 +34,7 @@ CREATE TABLE `perritos`.`usuarios` (
   `telefono` VARCHAR(10) NOT NULL,
   `direccion` VARCHAR(100) NOT NULL,
   `codigo_postal` VARCHAR(5) NOT NULL,
-  `e_mail` VARCHAR(45) NOT NULL,
+  `email` VARCHAR(45) NOT NULL,
   `tipo_usuario` INT NOT NULL,
   PRIMARY KEY (`idusuarios`));
 

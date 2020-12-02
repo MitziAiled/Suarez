@@ -243,6 +243,48 @@ function consulta_adopcion() {
 }
 
 
-//WEB SERVICE USUARIOS
+/******************WEB SERVICE USUARIOS********************/ 
+function alta_usuario($nombre, $apellidos, $genero, $telefono, $direccion, $codigo_postal, $email){
+    $connect = conectar();
+	$sql="        
+        insert into usuarios(
+			nombre,
+			apellidos,
+			genero,
+			telefono,
+			direccion,
+			codigo_postal,
+			email,
+			tipo_usuario
+		) values (
+			:nombre,
+			:apellidos,
+			:genero,
+			:telefono,
+			:direccion,
+			:codigo_postal,
+			:email,
+			1
+		)
+        "; 
 
+    $sql = $connect->prepare($sql);
+
+    $sql->bindParam(':nombre', $nombre);
+    $sql->bindParam(':apellidos', $apellidos);
+    $sql->bindParam(':genero', $genero);
+    $sql->bindParam(':telefono', $telefono);
+    $sql->bindParam(':direccion', $direccion);
+	$sql->bindParam(':codigo_postal', $codigo_postal);
+	$sql->bindParam(':email', $email);
+	
+
+    $sql->execute();
+
+	$id_insertado = $connect->lastInsertId();
+
+	$connect = null;
+
+	return ($id_insertado) ? true : false;          
+}
 ?>
