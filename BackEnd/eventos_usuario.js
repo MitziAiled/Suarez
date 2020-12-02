@@ -19,6 +19,11 @@ $(document).ready(function(){
     $("#btn_id").click(function() {
 		obtener_id();
 	});*/
+
+	$("#login").click(function() {
+		login();
+    });
+	
 });
 
 function alta_usuario() {
@@ -48,5 +53,38 @@ function alta_usuario() {
             alert("Ha ocurrido un error! " + status);
             console.log(xhr);
         }
+    });
+}
+
+function login(){
+	jQuery(document).on('submit', '#formlogin', function(event){
+		event.preventDefault();
+
+		jQuery.ajax({
+			url: '../BackEnd/validar_usuario.php',
+			type: 'POST',
+			dataType: 'json',
+			data: $(this).serialize(),
+			beforeSend: function(){
+			}
+		})
+		.done(function(respuesta){
+			console.log(respuesta);
+			if(!respuesta.error){
+				if(respuesta.rol == '1'){
+					location.href = 'bienvenida.html';
+				}else if(respuesta.rol == '2'){
+					location.href = '';
+				}
+			}else{
+	
+			}
+		})
+		.fail(function(resp){
+            console.log(resp.responseText);
+		})
+		.always(function(){
+			console.log("Completado");
+        });
     });
 }

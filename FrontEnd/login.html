@@ -2,23 +2,27 @@
     <head>
         <title>Puppy Rescue</title>
         <link href="assets/css/styles.css" rel="stylesheet" type="text/css"/>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/Suarez/BackEnd/eventos_usuario.js"></script>
+
     </head>
     <body>
-    <form action="./login/authenticate" method="POST">
+        <form action="" id="formlogin" method="post">
         <div id="rectangle">
             <label>
                 USUARIO:
             </label>
             <br><br>
-            <input type="text" name="nomUs" placeholder="Nombre de Usuario"/>
+            <input type="text" name="usuario" id="usuario" placeholder="Nombre de Usuario"/>
             <br><br>
             <label>
                 CONTRASEÑA:
             </label>
             <br><br>
-            <input type="password" name="passUs" placeholder="Contraseña"/>
+            <input type="password" name="contrasena" id="contrasena" placeholder="Contrase&ntilde;a"/>
             <br><br>
-            <button type="submit" name="ingresar">
+            <button type="submit" id="login" name="ingresar">
                 INGRESAR
             </button>
             <label id="crear_usuario">
