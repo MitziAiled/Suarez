@@ -26,20 +26,22 @@ require_once("base_de_datos.php");//FALTA HACER LO DE AQUI
 
         //Algoritmo o proceso
 
-    }/*else if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    }else if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
         $datos_recibidos = json_decode(file_get_contents("php://input"));  
         
         //Paso 1. Obtener valores de la solicitud
-        $calle = $datos_recibidos->calle;
-        $colonia = $datos_recibidos->colonia;
-        $ciudad = $datos_recibidos->ciudad;
-        $estado = $datos_recibidos->estado;
-        $rasgos_fisicos = $datos_recibidos->rasgos_fisicos;
-        $condicion = $datos_recibidos->condicion;
+        $nombre_inst= $datos_recibidos->nombre_inst;
+        $telefono = $datos_recibidos->telefono;
+        $direccion = $datos_recibidos->direccion;
+        $codigo_postal = $datos_recibidos->codigo_postal;
+        $nombre_representante = $datos_recibidos->nombre_representante;
+        $cargo_representante = $datos_recibidos->cargo_representante;
+        $tipo_institucion = $datos_recibidos->tipo_institucion;
+        $identificacion_tributaria = $datos_recibidos->identificacion_tributaria;
 
         //registrar en la BD
-        $resultado = alta_callejero($calle, $colonia, $ciudad, $estado, $rasgos_fisicos, $condicion);
+        $resultado = alta_institucion($nombre_inst, $telefono, $direccion, $codigo_postal, $nombre_representante, $cargo_representante, $tipo_institucion, $identificacion_tributaria);
 
         if ($resultado != null){
             //Si se realizo
@@ -61,7 +63,7 @@ require_once("base_de_datos.php");//FALTA HACER LO DE AQUI
             echo json_encode($respuesta);
         }
 
-    }else if($_SERVER['REQUEST_METHOD'] == 'PUT'){
+    }/*else if($_SERVER['REQUEST_METHOD'] == 'PUT'){
         //Contenido de proceso PUT
         $datos_recibidos = json_decode(file_get_contents("php://input"));
 

@@ -1,16 +1,16 @@
 $(document).ready(function(){
 	
-	// accion de registro callejero
+	// accion de consultar instituciones
 	$("#btn_consultar_instituciones").click(function() {
 		obtener_instituciones();
 	});
 
-	// accion de consultar callejero
-	/*$("#btn_consultar").click(function() {
-		obtener_callejeros();
+	// accion de registro instituciones
+	$("#enviar_formulario").click(function() {
+		alta_institucion();
     });
 	
-	//accion de consultar para adoptar
+	/*//accion de consultar para adoptar
     $("#btn_consulta_adoptar").click(function() {
 		obtener_para_adoptar();
     });*/
@@ -58,4 +58,35 @@ function consulta_institucion(instituciones) {
 	}
 
 	$("#tabla_consultainstitucion").html(html);
+}
+
+function alta_institucion() {
+	// COMPLETAR - DEFINIR EL JSON A ENVIAR CON LOS DATOS DEL PRODUCTO
+	let json_institucion = {
+		nombre_inst: $("#nombre_inst").val(),
+		telefono: $("#telefono").val(),
+		direccion: $("#direccion").val(),
+		codigo_postal: $("#codigo_postal").val(),
+		nombre_representante: $("#nombre_representante").val(),
+		cargo_representante: $("#cargo_representante").val(),
+		tipo_institucion: $("#tipo_institucion").val(),
+		identificacion_tributaria: $("#identificacion_tributaria").val()
+    };
+
+	$.ajax({
+        url: '/Suarez/BackEnd/institucion.php',
+        type: "POST",
+        // COMPLETAR - ENVIAR EL JSON DEL PRODUCTO
+        data: JSON.stringify(json_institucion), // CONVERTIR EN STRING JSON
+        success: function (data) {
+        	// COMPLETAR - PROCESAR RESPUESTA
+            alert(data.mensaje);
+            //cargar de nuevo la página
+            location.reload();
+        },
+        error: function (xhr, status) {
+            alert("Ha ocurrido un error! " + status);
+            console.log(xhr);
+        }
+    });
 }

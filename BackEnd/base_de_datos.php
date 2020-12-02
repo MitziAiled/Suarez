@@ -159,6 +159,53 @@ function consulta_institucion() {
 	}
 }
 
+function alta_institucion($nombre_inst, $telefono, $direccion, $codigo_postal, $nombre_representante, $cargo_representante, $tipo_institucion, $identificacion_tributaria){
+    $connect = conectar();
+	$sql="        
+        insert into instituciones(
+			nombre_inst,
+			telefono,
+			direccion,
+			codigo_postal,
+			nombre_representante,
+			cargo_representante,
+			tipo_institucion,
+			identificacion_tributaria,
+			tipo_usuario
+		) values (
+			:nombre_inst,
+			:telefono,
+			:direccion,
+			:codigo_postal,
+			:nombre_representante,
+			:cargo_representante,
+			:tipo_institucion,
+			:identificacion_tributaria,
+			2
+		)
+        "; 
+
+    $sql = $connect->prepare($sql);
+
+    $sql->bindParam(':nombre_inst', $nombre_inst);
+    $sql->bindParam(':telefono', $telefono);
+    $sql->bindParam(':direccion', $direccion);
+    $sql->bindParam(':codigo_postal', $codigo_postal);
+    $sql->bindParam(':nombre_representante', $nombre_representante);
+	$sql->bindParam(':cargo_representante', $cargo_representante);
+	$sql->bindParam(':tipo_institucion', $tipo_institucion);
+	$sql->bindParam(':identificacion_tributaria', $identificacion_tributaria);
+	
+
+    $sql->execute();
+
+	$id_insertado = $connect->lastInsertId();
+
+	$connect = null;
+
+	return ($id_insertado) ? true : false;          
+}
+
 
 /******************WEB SERVICE ADOPCIONES********************/ 
 function consulta_adopcion() {
