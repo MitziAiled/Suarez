@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <html>
     <head>
         <title>Puppy Rescue: Registro de Usuario</title>
@@ -49,7 +52,7 @@
                                 <option>Masculino</option>
                             </select>
                             <label>Id cuentas:</label>
-                            <input type="text" class="cpUs" name="idcuentas" id="idcuentas" autocomplete="off" required/>
+                            <input type="text" class="cpUs" name="idcuentas" id="idcuentas" autocomplete="off" value=<?php $_SESSION['idcuentas']?> required/>
                         </td>
                     </tr>
                 </table>
