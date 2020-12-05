@@ -32,10 +32,11 @@ function alta_usuario() {
 		nombre: $("#nombre").val(),
 		apellidos: $("#apellidos").val(),
 		genero: $("#genero").val(),
-		telefono: $("#telefono").val(),
+		telefono_usuario: $("#telefono_usuario").val(),
 		direccion: $("#direccion").val(),
 		codigo_postal: $("#codigo_postal").val(),
-		email: $("#email").val()
+		email: $("#email").val(),
+		idcuentas: $("#idcuentas").val()
     };
 
 	$.ajax({

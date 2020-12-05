@@ -2,7 +2,7 @@
 
 define('DB_HOST','localhost');
 define('DB_USER','root');
-define('DB_PASS','root');
+define('DB_PASS','');
 define('DB_NAME','perritos');
 
 function conectar() {
@@ -244,27 +244,27 @@ function consulta_adopcion() {
 
 
 /******************WEB SERVICE USUARIOS********************/ 
-function alta_usuario($nombre, $apellidos, $genero, $telefono, $direccion, $codigo_postal, $email){
+function alta_usuario($nombre, $apellidos, $genero, $telefono_usuario, $direccion, $codigo_postal, $email, $idcuentas){
     $connect = conectar();
 	$sql="        
         insert into usuarios(
 			nombre,
 			apellidos,
 			genero,
-			telefono,
+			telefono_usuario,
 			direccion,
 			codigo_postal,
 			email,
-			tipo_usuario
+			idcuentas
 		) values (
 			:nombre,
 			:apellidos,
 			:genero,
-			:telefono,
+			:telefono_usuario,
 			:direccion,
 			:codigo_postal,
 			:email,
-			1
+			:idcuentas
 		)
         "; 
 
@@ -273,10 +273,11 @@ function alta_usuario($nombre, $apellidos, $genero, $telefono, $direccion, $codi
     $sql->bindParam(':nombre', $nombre);
     $sql->bindParam(':apellidos', $apellidos);
     $sql->bindParam(':genero', $genero);
-    $sql->bindParam(':telefono', $telefono);
+    $sql->bindParam(':telefono_usuario', $telefono_usuario);
     $sql->bindParam(':direccion', $direccion);
 	$sql->bindParam(':codigo_postal', $codigo_postal);
 	$sql->bindParam(':email', $email);
+	$sql->bindParam(':idcuentas', $idcuentas);
 	
 
     $sql->execute();

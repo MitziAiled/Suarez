@@ -11,13 +11,14 @@ require_once("base_de_datos.php");//FALTA HACER LO DE AQUI
         $nombre= $datos_recibidos->nombre;
         $apellidos = $datos_recibidos->apellidos;
         $genero = $datos_recibidos->genero;
-        $telefono = $datos_recibidos->telefono;
+        $telefono_usuario = $datos_recibidos->telefono_usuario;
         $direccion = $datos_recibidos->direccion;
         $codigo_postal = $datos_recibidos->codigo_postal;
         $email = $datos_recibidos->email;
+        $idcuentas = $datos_recibidos->idcuentas;
 
         //registrar en la BD
-        $resultado = alta_usuario($nombre, $apellidos, $genero, $telefono, $direccion, $codigo_postal, $email);
+        $resultado = alta_usuario($nombre, $apellidos, $genero, $telefono_usuario, $direccion, $codigo_postal, $email, $idcuentas);
 
         if ($resultado != null){
             //Si se realizo

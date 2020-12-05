@@ -10,7 +10,7 @@
     <script src="/Suarez/BackEnd/eventos_usuario.js"></script>
     <body>
         <div id="rectangle">
-            <form action="registro_cuenta.html" method="POST">
+            <form action="bienvenida.html" method="POST">
                 <table>
                     <tr>
                         <td>
@@ -27,7 +27,7 @@
                     <tr>
                         <td>
                             <label>Tel&eacute;fono:</label>
-                            <input type="text" class="telUs" name="telefono" id="telefono" autocomplete="off" required/>
+                            <input type="text" class="telUs" name="telefono_usuario" id="telefono_usuario" autocomplete="off" required/>
                         </td>
                     </tr>
                     <tr>
@@ -51,8 +51,7 @@
                                 <option>Femenino</option>
                                 <option>Masculino</option>
                             </select>
-                            <label>Id cuentas:</label>
-                            <input type="text" class="cpUs" name="idcuentas" id="idcuentas" autocomplete="off" value=<?php $_SESSION['idcuentas']?> required/>
+                            <input type="text" class="cpUs" name="idcuentas" id="idcuentas" autocomplete="off" value="<?php echo $_SESSION['idcuentas']?>" required/>
                         </td>
                     </tr>
                 </table>

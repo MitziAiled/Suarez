@@ -13,7 +13,7 @@ if( isset($_POST['usuario']) && isset($_POST['contrasena'])){
 
     if($query->rowCount() == 1):
         $datos = $query->fetch(PDO::FETCH_ASSOC);
-        echo json_encode(array('error' => false, 'rol' => $datos['tipo_usuario']));
+        echo json_encode(array('error' => false, 'rol' => $datos['idcuentas']));
         $_SESSION['usuario'] = $usuario;
         $_SESSION['tipo_usuario'] = $datos['tipo_usuario'];
         $_SESSION['idcuentas']= $datos['idcuentas'];
