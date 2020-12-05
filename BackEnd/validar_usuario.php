@@ -9,13 +9,14 @@ if( isset($_POST['usuario']) && isset($_POST['contrasena'])){
     //Establecer conexion con BD
     $conexion = conectar();
 
-    $query = $conexion->query("SELECT id, usuario, contrasena FROM cuentas WHERE usuario = '$usuario' AND contrasena = '$contrasena'");
+    $query = $conexion->query("SELECT * FROM cuentas WHERE usuario = '$usuario' AND contrasena = '$contrasena'");
 
     if($query->rowCount() == 1):
         $datos = $query->fetch(PDO::FETCH_ASSOC);
-        echo json_encode(array('error' => false, 'rol' => $datos['id']));
+        echo json_encode(array('error' => false, 'rol' => $datos['tipo_usuario']));
         $_SESSION['usuario'] = $usuario;
-        $_SESSION['rol']= $datos['id'];
+        $_SESSION['tipo_usuario'] = $datos['tipo_usuario'];
+        $_SESSION['idcuentas']= $datos['idcuentas'];
     else:
         echo json_encode(array('error' => true));
     endif;  

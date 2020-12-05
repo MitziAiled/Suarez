@@ -72,7 +72,7 @@ function login(){
 			console.log(respuesta);
 			if(!respuesta.error){
 				if(respuesta.rol == '1'){
-					location.href = 'bienvenida.html';
+					location.href = 'registro_usuario.html';
 				}else if(respuesta.rol == '2'){
 					location.href = '';
 				}
