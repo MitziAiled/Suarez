@@ -2,8 +2,26 @@
 
 require_once("base_de_datos.php");//FALTA HACER LO DE AQUI
 
-    //verificar si es método POST (ALTA)
-    if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    if($_SERVER['REQUEST_METHOD'] == 'GET'){
+
+        $usuarios = consulta_idcuentas();
+
+        header ('Content-Type:application/json'); //La respuesta es en json
+            
+        $idcuentas = 0;
+        foreach($usuarios as $item){//obtener todo del resultado de la bd
+                $idcuentas = $item; //agrega cada callejero al arreglo de callejeros
+         }
+
+        $respuesta = [
+            "mensaje" => "Consulta exitosa",
+            "usuarios" => $idcuentas
+        ];
+        echo json_encode($respuesta);
+
+        //Algoritmo o proceso
+
+    }else if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
         $datos_recibidos = json_decode(file_get_contents("php://input"));  
         

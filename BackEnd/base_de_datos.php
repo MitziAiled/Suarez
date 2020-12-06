@@ -288,4 +288,16 @@ function alta_usuario($nombre, $apellidos, $genero, $telefono_usuario, $direccio
 
 	return ($id_insertado) ? true : false;          
 }
+
+function consulta_idcuentas() {
+	$connect = conectar();
+	$sql = "SELECT idusuarios from usuarios where idcuentas= " + $_SESSION['idcuentas'];
+	
+	$query = $connect -> prepare($sql); 
+	$query -> execute(); 
+	$results = $query -> fetchAll(PDO::FETCH_OBJ); 
+	
+	return $results;
+}
+
 ?>

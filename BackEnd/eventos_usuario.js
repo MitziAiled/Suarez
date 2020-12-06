@@ -57,11 +57,37 @@ function alta_usuario() {
     });
 }
 
+function obtener_idcuentas() {
+	// COMPLETAR - CONFIGURAR LA SOLICITUD AJAX
+	$.ajax({
+        url: '../BackEnd/usuario.php',//donde esta mi web service
+        type: "GET", // MÉTODO DE ACCESO
+        dataType: "JSON", // FORMATO DE LOS DATOS
+        success: function (data) {
+        	// COMPLETAR - VERIFICAR QUE EXISTAN LOS PRODUCTOS
+            if (data.usuarios) {
+            	// COMPLETAR - LOS DATOS EN LA TABLA
+                consulta_idcuentas(data.usuarios);
+            }
+        },
+        error: function (xhr, status) {
+            alert("Ha ocurrido un error! " + status);
+            console.log(xhr);
+        }
+    });
+}
+
+function consulta_idcuentas(usuarios) {
+	for (let index in usuarios) {
+		usuarios[index].idcuentas;	
+	}
+}
+
 function login(){
-	jQuery(document).on('submit', '#formlogin', function(event){
+	$(document).on('submit', '#formlogin', function(event){
 		event.preventDefault();
 
-		jQuery.ajax({
+		$.ajax({
 			url: '../BackEnd/validar_usuario.php',
 			type: 'POST',
 			dataType: 'json',
@@ -73,7 +99,9 @@ function login(){
 			console.log(respuesta);
 			if(!respuesta.error){
 				if(respuesta.rol == '1'){
-					location.href = 'registro_usuario.php';
+					if(consulta_idcuentas() == 0){
+						location.href = 'registro_usuario.php';
+					}else{location.href = 'bienvenida.html';}
 				}else if(respuesta.rol == '2'){
 					location.href = '';
 				}
@@ -86,6 +114,6 @@ function login(){
 		})
 		.always(function(){
 			console.log("Completado");
-        });
+		});
     });
 }
