@@ -8,15 +8,14 @@ define('DB_NAME','perritos');
 
 function conectar() {
 	try {
-		// Ejecutamos las variables y aplicamos UTF8
 		return new PDO("mysql:host=".DB_HOST.";dbname=".DB_NAME,DB_USER, DB_PASS,
 		array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'"));
-	} catch (PDOException $e) {
+	}catch (PDOException $e) {
 		exit("Error: " . $e->getMessage());
 	}
 }
 
-/**********WEB SERVICE CALLEJEROS**********/
+/********************WEB SERVICE CALLEJEROS********************/
 
 function consulta_callejero() {
 	$connect = conectar();
@@ -128,22 +127,7 @@ function modificar_estatus($idcallejeros) {
 	return ($sql->rowCount() > 0) ? true : false;
 }
 
-/*
-function eliminar($folio) {
-	$connect = conectar();
-	$sql="delete from productos where folio = :folio";
-
-	$sql = $connect->prepare($sql);
-	$sql->bindParam(':folio', $folio);
-
-	$sql->execute();
-
-	$connect = null;
-
-	return ($sql->rowCount() > 0) ? true : false;
-}*/
-
-/**********WEB SERVICE INSTITUCION**********/
+/********************WEB SERVICE INSTITUCION********************/
 function consulta_institucion() {
 	$connect = conectar();
 	$sql = "SELECT idinstituciones, nombre_inst, telefono, direccion,
@@ -209,7 +193,7 @@ function alta_institucion($nombre_inst, $telefono, $direccion, $codigo_postal, $
 }
 
 
-/******************WEB SERVICE ADOPCIONES********************/ 
+/********************WEB SERVICE ADOPCIONES********************/ 
 function consulta_adopcion() {
 	$connect = conectar();
 	$sql = "SELECT
@@ -245,7 +229,7 @@ function consulta_adopcion() {
 }
 
 
-/******************WEB SERVICE USUARIOS********************/ 
+/********************WEB SERVICE USUARIOS********************/ 
 function alta_usuario($nombre, $apellidos, $genero, $telefono_usuario, $direccion, $codigo_postal, $email, $idcuentas){
     $connect = conectar();
 	$sql="        

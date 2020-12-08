@@ -1,20 +1,16 @@
 <?php
 
-require_once("base_de_datos.php");//FALTA HACER LO DE AQUI
+require_once("base_de_datos.php");
 
-    //verificar si es método GET (CONSULTA)
     if($_SERVER['REQUEST_METHOD'] == 'GET'){
-        //Consultar por id
-        //Consultar todo
         $instituciones = consulta_institucion();
 
-        if(is_array($instituciones)){ //si tiene elementos
-            //si hay elementos
-            header ('Content-Type:application/json'); //La respuesta es en json
+        if(is_array($instituciones)){
+            header ('Content-Type:application/json');
             
             $array_instituciones = [];
-            foreach($instituciones as $item){//obtener todo del resultado de la bd
-                $array_instituciones[] = $item; //agrega cada callejero al arreglo de callejeros
+            foreach($instituciones as $item){
+                $array_instituciones[] = $item;
             }
 
             $respuesta = [
@@ -24,13 +20,10 @@ require_once("base_de_datos.php");//FALTA HACER LO DE AQUI
             echo json_encode($respuesta);
         }
 
-        //Algoritmo o proceso
-
     }else if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
         $datos_recibidos = json_decode(file_get_contents("php://input"));  
         
-        //Paso 1. Obtener valores de la solicitud
         $nombre_inst= $datos_recibidos->nombre_inst;
         $telefono = $datos_recibidos->telefono;
         $direccion = $datos_recibidos->direccion;
@@ -41,12 +34,10 @@ require_once("base_de_datos.php");//FALTA HACER LO DE AQUI
         $identificacion_tributaria = $datos_recibidos->identificacion_tributaria;
         $idcuentas = $datos_recibidos->idcuentas;
 
-        //registrar en la BD
         $resultado = alta_institucion($nombre_inst, $telefono, $direccion, $codigo_postal, $nombre_representante, $cargo_representante, $tipo_institucion, $identificacion_tributaria, $idcuentas);
 
         if ($resultado != null){
-            //Si se realizo
-            header ('Content-Type:application/json'); //La respuesta es en json
+            header ('Content-Type:application/json');
         
             $respuesta = [
                 "mensaje" => "Registro exitoso"
@@ -54,8 +45,7 @@ require_once("base_de_datos.php");//FALTA HACER LO DE AQUI
 
             echo json_encode($respuesta);
         }else{
-            //no se realizo
-            header ('Content-Type:application/json'); //La respuesta es en json
+            header ('Content-Type:application/json');
         
             $respuesta = [
                 "mensaje" => "No se pudo registrar"
@@ -93,6 +83,6 @@ require_once("base_de_datos.php");//FALTA HACER LO DE AQUI
         }        
 
     }*/else{
-        //Procesar error y responder
+        echo "Hubo un error";
     }
 ?>

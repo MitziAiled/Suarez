@@ -1,6 +1,5 @@
 $(document).ready(function(){
     obtener_adopciones();
-    console.log("HOLA");
     
     //accion de registro adopcion
     $("#btn_consulta_adopciones").click(function() {
