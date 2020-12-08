@@ -100,15 +100,12 @@ function login(){
 			console.log(respuesta);
 			if(!respuesta.error){
 				if(respuesta.rol == '1'){
-					if(respuesta.idusuarios=='1'){
-						window.location.href = 'http://localhost/Suarez/FrontEnd/registro_usuario.php';
-					}else if(respuesta.idusuarios=='2'){
-						window.location.href = 'http://localhost/Suarez/FrontEnd/bienvenida.html';}
-					location.href = 'bienvenida.html';
-					alert("Bienvenido Usuario! Verifica que tus datos de perfil esten registrados correctamente.");
+					if(respuesta.idusuarios == '1'){
+						window.location.href = 'bienvenida.html';
+					}else if(respuesta.idusuarios != '1'){
+						window.location.href = 'registro_usuario.php';}
 				}else if(respuesta.rol == '2'){
-					location.href = 'bienvenidaInstitucion.html';
-					alert("Bienvenida Institucion! Verifique que sus datos esten registrados correctamente.");
+					location.href = '';
 				}
 			}else{
 	
@@ -121,4 +118,4 @@ function login(){
 			console.log("Completado");
 		});
     });
-}
+}	
