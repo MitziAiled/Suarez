@@ -21,7 +21,7 @@
                 <li><a href="">USUARIO</a>
                     <ul>
                         <li>
-                            <form action="./perfilUsuario"><button>Perfil</button></form>
+                            <form action="perfil.html"><button>Perfil</button></form>
                         </li>
                         <li>
                             <form action="../BackEnd/logout.php" method="POST">
@@ -33,42 +33,23 @@
 			</ul>
 		</div>
         <div id="rectangle">
+            <button type="submit" id="completar">Completar Datos</button>
             <form action="" method="POST">
                 <table>
-                    <tr>
-                        <td>
-                            <label>Nombre(s):</label>
-                            <input type="text" class="nomUs" name="nomUs" autocomplete="off" required/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label>Apellido(s):</label>
-                            <input type="text" class="apellUs" name="apellUs" autocomplete="off" required/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label>Tel&eacute;fono:</label>
-                            <input type="text" class="telUs" name="telUs" autocomplete="off" required/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label>Direcci&oacute;n:</label>
-                            <input type="text" class="dirUs" name="dirUs" autocomplete="off" required/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label>C.P:</label>
-                            <input type="text" class="cpUs" name="cpUs" autocomplete="off" required/>
-                            <label>Contrase&ntilde;a:</label>
-                            <input type="text" class="passUs" name="passUs" autocomplete="off" required/>
-                       </td> 
-                    </tr>
+                    <thead>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Tel&eacute;fono</th>
+                        <th>Direcci&oacute;n</th>
+                        <th>CP</th>
+                        <th>Usuario</th>
+                        <th>Contrase&ntilde;a</th>
+                        <th>Editar</th>
+                    </thead>
+                    <tbody id="">
+                    </tbody>
                 </table>
-                <button type="submit" id="modificar_formulario">Modificar</button>
             </form>
         </div>
     </body>

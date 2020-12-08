@@ -4,12 +4,13 @@ body{
 }
 
 #rectangle{
-    width:600px;
+    width:800px;
     height:400px;
     background-color:#825534;
     border-radius: 50px ;
     margin-top: 40px;
-    margin-left: 650px;
+    margin-left: 500px;
+    text-align: center;
 }
 
 label{
@@ -57,7 +58,7 @@ label{
     
 }
 
-#modificar_formulario{
+#completar{
     color:white;
     background-color: #825534;
     height: 30px;
@@ -65,10 +66,20 @@ label{
     font-family: Felix Titling;
     border-radius: 50px;
     position: absolute; 
-    left: 970px;
-    top: 553px;
+    left: 300px;
+    top: 300px;
 }
 
 a{
     color:white;
+}
+
+table{
+    border: 2px solid black;
+    margin-top: 60px;
+    margin-left: 0px;
+    font-family: Felix Titling;
+    font-size: medium;
+    background-color: white;
+    border-spacing: 15px 15px;
 }
