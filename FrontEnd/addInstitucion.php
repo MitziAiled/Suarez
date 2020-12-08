@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <html>
     <head>
         <title>Puppy Rescue: Registro de Mascota</title>
@@ -19,11 +22,10 @@
     </head>
     <body>
         <div id="rectangle1">
-            <form action="registro_cuenta.html" method="POST">
+            <form action="bienvenidaInstitucion.html" method="POST">
                 <label>INSTITUCI&Oacute;N:</label>
                 <br><br>
                 <label>Nombre:</label>
-                <input type="hidden" name="id" value="">
                 <input type="text" name="nombre_inst" id="nombre_inst" value=""/>
                 <br>
                 <label>Direcci&oacute;n:</label>
@@ -49,6 +51,7 @@
                 <br>
                 <label>Ident. Tributaria:</label>
                 <input type="text" name="identificacion_tributaria" id="identificacion_tributaria" value=""/>
+                <input type="hidden" class="cpUs" name="idcuentas" id="idcuentas" autocomplete="off" value="<?php echo $_SESSION['idcuentas']?>" readonly/>
         </div>
                 <input id="enviar_formulario" type="submit" value="Siguiente"/>
             </form>

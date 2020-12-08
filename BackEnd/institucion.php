@@ -39,9 +39,10 @@ require_once("base_de_datos.php");//FALTA HACER LO DE AQUI
         $cargo_representante = $datos_recibidos->cargo_representante;
         $tipo_institucion = $datos_recibidos->tipo_institucion;
         $identificacion_tributaria = $datos_recibidos->identificacion_tributaria;
+        $idcuentas = $datos_recibidos->idcuentas;
 
         //registrar en la BD
-        $resultado = alta_institucion($nombre_inst, $telefono, $direccion, $codigo_postal, $nombre_representante, $cargo_representante, $tipo_institucion, $identificacion_tributaria);
+        $resultado = alta_institucion($nombre_inst, $telefono, $direccion, $codigo_postal, $nombre_representante, $cargo_representante, $tipo_institucion, $identificacion_tributaria, $idcuentas);
 
         if ($resultado != null){
             //Si se realizo

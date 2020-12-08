@@ -160,7 +160,7 @@ function consulta_institucion() {
 	}
 }
 
-function alta_institucion($nombre_inst, $telefono, $direccion, $codigo_postal, $nombre_representante, $cargo_representante, $tipo_institucion, $identificacion_tributaria){
+function alta_institucion($nombre_inst, $telefono, $direccion, $codigo_postal, $nombre_representante, $cargo_representante, $tipo_institucion, $identificacion_tributaria, $idcuentas){
     $connect = conectar();
 	$sql="        
         insert into instituciones(
@@ -172,7 +172,7 @@ function alta_institucion($nombre_inst, $telefono, $direccion, $codigo_postal, $
 			cargo_representante,
 			tipo_institucion,
 			identificacion_tributaria,
-			tipo_usuario
+			idcuentas
 		) values (
 			:nombre_inst,
 			:telefono,
@@ -182,7 +182,7 @@ function alta_institucion($nombre_inst, $telefono, $direccion, $codigo_postal, $
 			:cargo_representante,
 			:tipo_institucion,
 			:identificacion_tributaria,
-			2
+			:idcuentas
 		)
         "; 
 
@@ -196,6 +196,7 @@ function alta_institucion($nombre_inst, $telefono, $direccion, $codigo_postal, $
 	$sql->bindParam(':cargo_representante', $cargo_representante);
 	$sql->bindParam(':tipo_institucion', $tipo_institucion);
 	$sql->bindParam(':identificacion_tributaria', $identificacion_tributaria);
+	$sql->bindParam(':idcuentas', $idcuentas);
 	
 
     $sql->execute();

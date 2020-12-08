@@ -70,11 +70,12 @@ function alta_institucion() {
 		nombre_representante: $("#nombre_representante").val(),
 		cargo_representante: $("#cargo_representante").val(),
 		tipo_institucion: $("#tipo_institucion").val(),
-		identificacion_tributaria: $("#identificacion_tributaria").val()
+		identificacion_tributaria: $("#identificacion_tributaria").val(),
+		idcuentas: $("#idcuentas").val()
     };
 
 	$.ajax({
-        url: '/Suarez/BackEnd/institucion.php',
+        url: '../BackEnd/institucion.php',
         type: "POST",
         // COMPLETAR - ENVIAR EL JSON DEL PRODUCTO
         data: JSON.stringify(json_institucion), // CONVERTIR EN STRING JSON

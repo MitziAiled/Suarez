@@ -106,7 +106,7 @@ function login(){
 				}else if(respuesta.rol == '2'){
 					if(respuesta.idinstituciones == '1'){
 						window.location.href = 'bienvenidaInstitucion.html';
-					}else{window.location.href = 'addInstitucion.html';}
+					}else{window.location.href = 'addInstitucion.php';}
 				}
 			}else{
 	
