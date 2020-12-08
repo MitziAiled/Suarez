@@ -99,11 +99,11 @@ function login(){
 			console.log(respuesta);
 			if(!respuesta.error){
 				if(respuesta.rol == '1'){
-					if(consulta_idcuentas() == 0){
-						location.href = 'registro_usuario.php';
-					}else{location.href = 'bienvenida.html';}
+					location.href = 'bienvenida.html';
+					alert("Bienvenido Usuario! Verifica que tus datos de perfil esten registrados correctamente.");
 				}else if(respuesta.rol == '2'){
-					location.href = '';
+					location.href = 'bienvenidaInstitucion.html';
+					alert("Bienvenida Institucion! Verifique que sus datos esten registrados correctamente.");
 				}
 			}else{
 	

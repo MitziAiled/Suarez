@@ -51,14 +51,14 @@
                                 <option>Femenino</option>
                                 <option>Masculino</option>
                             </select>
-                            <input type="text" class="cpUs" name="idcuentas" id="idcuentas" autocomplete="off" value="<?php echo $_SESSION['idcuentas']?>" required/>
+                            <input type="text" class="cpUs" name="idcuentas" id="idcuentas" autocomplete="off" value="<?php echo $_SESSION['idcuentas']?>" readonly/>
                         </td>
                     </tr>
                 </table>
                 <button type="submit" id="enviar_formulario">SIGUIENTE</button>
             </form>
             <button id="volver">
-                <a href="login.php">Volver</a> <!--Verificar si esto es correcto ya que antes era "../"-->
+                <a href="login.html">Volver</a>
             </button>
         </div>
     </body>
