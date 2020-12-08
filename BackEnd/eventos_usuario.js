@@ -67,7 +67,8 @@ function obtener_idcuentas() {
         	// COMPLETAR - VERIFICAR QUE EXISTAN LOS PRODUCTOS
             if (data.usuarios) {
             	// COMPLETAR - LOS DATOS EN LA TABLA
-                consulta_idcuentas(data.usuarios);
+				//consulta_idcuentas(data.usuarios);
+				var h = data.usuarios;
             }
         },
         error: function (xhr, status) {
@@ -79,7 +80,7 @@ function obtener_idcuentas() {
 
 function consulta_idcuentas(usuarios) {
 	for (let index in usuarios) {
-		usuarios[index].idcuentas;	
+		usuarios[index].idusuarios;	
 	}
 }
 
@@ -99,9 +100,10 @@ function login(){
 			console.log(respuesta);
 			if(!respuesta.error){
 				if(respuesta.rol == '1'){
-					if(consulta_idcuentas() == 0){
-						location.href = 'registro_usuario.php';
-					}else{location.href = 'bienvenida.html';}
+					if(respuesta.idusuarios=='1'){
+						window.location.href = 'http://localhost/Suarez/FrontEnd/registro_usuario.php';
+					}else if(respuesta.idusuarios=='2'){
+						window.location.href = 'http://localhost/Suarez/FrontEnd/bienvenida.html';}
 				}else if(respuesta.rol == '2'){
 					location.href = '';
 				}

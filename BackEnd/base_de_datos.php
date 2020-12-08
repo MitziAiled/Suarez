@@ -1,4 +1,5 @@
 <?php 
+session_start();
 
 define('DB_HOST','localhost');
 define('DB_USER','root');
@@ -291,7 +292,7 @@ function alta_usuario($nombre, $apellidos, $genero, $telefono_usuario, $direccio
 
 function consulta_idcuentas() {
 	$connect = conectar();
-	$sql = "SELECT idusuarios from usuarios where idcuentas= " + $_SESSION['idcuentas'];
+	$sql = "SELECT idusuarios from usuarios where idcuentas= "  + $_SESSION['idcuentas'];
 	
 	$query = $connect -> prepare($sql); 
 	$query -> execute(); 
