@@ -9,6 +9,32 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="/Suarez/BackEnd/eventos_usuario.js"></script>
     <body>
+        <div id="menu">
+			<ul class="nav">
+                <li>
+                    <a href="">ADOPCIONES</a>
+                    <ul>
+						<li><form action="consultarAdopcion.html"><button>Consultar</button></form></li>
+					</ul>
+                </li>
+                <li><a href="">CALLEJEROS</a>
+                    <ul>
+						<li><form action="addCallejero.html"><button>Registrar</button></form></li>
+						<li><form action="consultarCallejeroInstitucion.html"> <button>Consultar</button></form></li>
+					</ul>
+                </li>
+				<li><a href="">INSTITUCI&Oacute;N</a>
+                    <ul>
+						<li><form action="datosInstitucion.html"><button>Mis Datos</button></form></li>
+					</ul>
+                </li>
+                <li>
+                    <form action="../BackEnd/logout.php" method="POST">
+                        <button type="submit" value="Log out" onclick="return confirmLogout()">Cerrar Sesion</button>
+                    </form>
+                </li>
+			</ul>
+		</div>
         <div id="rectangle">
             <form action="bienvenida.html" method="POST">
                 <table>
@@ -51,14 +77,14 @@
                                 <option>Femenino</option>
                                 <option>Masculino</option>
                             </select>
-                            <input type="text" class="cpUs" name="idcuentas" id="idcuentas" autocomplete="off" value="<?php echo $_SESSION['idcuentas']?>" required/>
+                            <input type="text" class="cpUs" name="idcuentas" id="idcuentas" autocomplete="off" value="<?php echo $_SESSION['idcuentas']?>" readonly/>
                         </td>
                     </tr>
                 </table>
                 <button type="submit" id="enviar_formulario">SIGUIENTE</button>
             </form>
             <button id="volver">
-                <a href="login.php">Volver</a> <!--Verificar si esto es correcto ya que antes era "../"-->
+                <a href="login.html">Volver</a>
             </button>
         </div>
     </body>

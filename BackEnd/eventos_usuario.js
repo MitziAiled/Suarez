@@ -104,8 +104,11 @@ function login(){
 						window.location.href = 'http://localhost/Suarez/FrontEnd/registro_usuario.php';
 					}else if(respuesta.idusuarios=='2'){
 						window.location.href = 'http://localhost/Suarez/FrontEnd/bienvenida.html';}
+					location.href = 'bienvenida.html';
+					alert("Bienvenido Usuario! Verifica que tus datos de perfil esten registrados correctamente.");
 				}else if(respuesta.rol == '2'){
-					location.href = '';
+					location.href = 'bienvenidaInstitucion.html';
+					alert("Bienvenida Institucion! Verifique que sus datos esten registrados correctamente.");
 				}
 			}else{
 	

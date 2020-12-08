@@ -301,4 +301,33 @@ function consulta_idcuentas() {
 	return $results;
 }
 
+function registrar_cuenta($usuario, $contrasena, $tipo_usuario){
+    $connect = conectar();
+	$sql="        
+        insert into cuentas(
+			usuario,
+			contrasena,
+			tipo_usuario
+		) values (
+			:usuario,
+			:contrasena,
+			:tipo_usuario
+		)
+        "; 
+
+    $sql = $connect->prepare($sql);
+
+    $sql->bindParam(':usuario', $usuario);
+    $sql->bindParam(':contrasena', $contrasena);
+    $sql->bindParam(':tipo_usuario', $tipo_usuario);
+
+    $sql->execute();
+
+	$id_insertado = $connect->lastInsertId();
+
+	$connect = null;
+
+	return ($id_insertado) ? true : false;          
+}
+
 ?>

@@ -3,33 +3,35 @@
         <title>Puppy Rescue: Registro de Usuario</title>
         <link href="assets/css/registro_cuenta.css" rel="stylesheet" type="text/css">
     </head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/Suarez/BackEnd/eventos_cuenta.js"></script>
     <body>
         <div id="rectangle">
-            <form action="./registro_usuario/create-account" method="POST">
+            <form action="login.html" method="POST">
                 <table>
                     <tr>
                         <td>
                             <label>Usuario:</label>
-                            <input type="text" class="Us" name="usuario" autocomplete="off" required/>
+                            <input type="text" class="Us" name="usuario" id="usuario" autocomplete="off" required/>
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <label>Contrase&ntilde;a:</label>
-                            <input type="text" class="passUs" name="contrasena" autocomplete="off" required/>
+                            <input type="text" class="passUs" name="contrasena" id="contrasena" autocomplete="off" required/>
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <label>Tipo:</label>
-                            <select class="Us">
+                            <select class="Us" id="tipo_usuario" >
                                 <option value="1">Persona F&iacute;sica</option>
                                 <option value="2">Instituci&oacute;n</option>
                             </select>
                         </td>
                     </tr>
                 </table>
-                <button type="submit" id="registrar">REGISTRAR</button>
+                <button type="submit" id="registrar_cuenta">REGISTRAR</button>
             </form>
         </div>
     </body>
