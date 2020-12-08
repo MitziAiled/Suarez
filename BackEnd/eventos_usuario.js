@@ -102,10 +102,11 @@ function login(){
 				if(respuesta.rol == '1'){
 					if(respuesta.idusuarios == '1'){
 						window.location.href = 'bienvenida.html';
-					}else if(respuesta.idusuarios != '1'){
-						window.location.href = 'registro_usuario.php';}
+					}else{window.location.href = 'registro_usuario.php';}
 				}else if(respuesta.rol == '2'){
-					location.href = '';
+					if(respuesta.idinstituciones == '1'){
+						window.location.href = 'bienvenidaInstitucion.html';
+					}else{window.location.href = 'addInstitucion.html';}
 				}
 			}else{
 	
