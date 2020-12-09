@@ -34,10 +34,18 @@ if( isset($_POST['usuario']) && isset($_POST['contrasena'])){
             }
         }else{    
             //----------------------USUARIOS QUE SON INSTITUCIONES
-            $query3 = $conexion->query("SELECT idinstituciones from instituciones where idcuentas= '$idd'");    
+            $query3 = $conexion->query("SELECT * from instituciones where idcuentas= '$idd'");    
             if($query3->rowCount() == 1){              
                 $datos3 = $query3->fetch(PDO::FETCH_ASSOC);
                 $_SESSION['idinstituciones']= $datos3['idinstituciones'];
+                $_SESSION['nombre_inst']= $datos3['nombre_inst'];
+                $_SESSION['telefono']= $datos3['telefono'];
+                $_SESSION['direccion']= $datos3['direccion'];
+                $_SESSION['codigo_postal']= $datos3['codigo_postal'];
+                $_SESSION['nombre_representante']= $datos3['nombre_representante'];
+                $_SESSION['cargo_representante']= $datos3['cargo_representante'];
+                $_SESSION['tipo_institucion']= $datos3['tipo_institucion'];
+                $_SESSION['identificacion_tributaria']= $datos3['identificacion_tributaria'];
                 echo json_encode(array('error' => false, 'rol' => $_SESSION['tipo_usuario'], 'idcuentas' =>$_SESSION['idcuentas'], 'idinstituciones' =>'1'));
             }else{
                 echo json_encode(array('error' => false, 'rol' => $_SESSION['tipo_usuario'], 'idcuentas' =>$_SESSION['idcuentas'], 'idinstituciones' =>'2'));

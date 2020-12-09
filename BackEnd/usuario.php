@@ -68,14 +68,14 @@ require_once("base_de_datos.php");
 		$email = $datos_recibidos->email;
 		// procesar algoritmo
 
-		$resultado = actualizar_usuario($idusuarios, $nombre, $apellidos ,$telefono_usuario, $direccion, $codigo_postal, $email);
+		$resultado = actualizar_usuarios($idusuarios, $nombre, $apellidos ,$telefono_usuario, $direccion, $codigo_postal, $email);
 
 		if ($resultado !=null ) {
 			# sí se actualizó
 			header ('Content-Type: application/json'); // la respuesta es en JSON
 
 			$respuesta = [
-				"mensaje" => "Actualización correcta"
+				"mensaje" => "Actualización correcta. Para que se reflejen los cambios debe de volver a iniciar sesión."
 			];
 
 			echo json_encode($respuesta);

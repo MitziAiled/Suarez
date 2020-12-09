@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <html>
     <head>
         <title>Puppy Rescue: Consulta de Mascotas</title>
@@ -15,6 +18,10 @@
 
 		</script>
     </head>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/Suarez/BackEnd/eventosi.js"></script>
+
     <body>
     <div id="menu">
 			<ul class="nav">
@@ -43,38 +50,37 @@
 			</ul>
 		</div>
         <div id="rectangle1">
-            <form action="" method="POST">
+            <form action="#" method="POST">
                 <label>INSTITUCI&Oacute;N:</label> 
                 <br><br>
+                <input type="text" name="idinstituciones" value="<?php echo $_SESSION['idinstituciones']?>">
                 <label>Nombre:</label>
-                <input type="hidden" name="id" value=""><!--<= $institucion->getID(); ?> FALTA SIGNO DE INTERROGACION AL INICIO-->
-                <input type="text" name="nomInst" id="nombre" value=""/><!--<= $institucion->getNomInst(); ?> FALTA SIGNO DE INTERROGACION AL INICIO-->
+                <input type="text" name="nombre_inst" id="nombre_inst" value="<?php echo $_SESSION['nombre_inst']?>" readonly/>
                 <br>
                 <label>Direcci&oacute;n:</label>
-                <input type="text" name="dirInst" id="direccion" value=""/><!--<= $institucion->getDirInst(); ?> FALTA SIGNO DE INTERROGACION AL INICIO-->
+                <input type="text" name="direccion" id="direccion" value="<?php echo $_SESSION['direccion']?>" autocomplete="off" required/>
                 <br>
                 <label>Tel&eacute;fono:</label>
-                <input type="text" name="telInst" id="telefono" value=""/><!--<= $institucion->getTelInst(); ?> FALTA SIGNO DE INTERROGACION AL INICIO-->
+                <input type="text" name="telefono" id="telefono" value="<?php echo $_SESSION['telefono']?>" autocomplete="off" required/>
                 <br>
                 <label>C&oacute;digo Postal:</label>
-                <input type="text" name="cp" id="cp" value=""/><!--<= $institucion->getCP(); ?> FALTA SIGNO DE INTERROGACION AL INICIO-->
-        </div>
+                <input type="text" name="codigo_postal" id="codigo_postal" value="<?php echo $_SESSION['codigo_postal']?>" autocomplete="off" required/>
         <div id="rectangle2">
                 <label>REPRESENTANTE:</label>
                 <br><br>
                 <label>Nombre Completo:</label>
-                <input type="text" name="nomRep" id="nombre" value=""/><!--<= $institucion->getNomRep(); ?> FALTA SIGNO DE INTERROGACION AL INICIO-->
+                <input type="text" name="nombre_representante" id="nombre_representante" value="<?php echo $_SESSION['nombre_representante']?>" autocomplete="off" required/>
                 <br>
                 <label>Cargo:</label>
-                <input type="text" name="cargo" id="Cargo" value=""/><!--<= $institucion->getCargo(); ?> FALTA SIGNO DE INTERROGACION AL INICIO-->
+                <input type="text" name="cargo_representante" id="cargo_representante" value="<?php echo $_SESSION['cargo_representante']?>" autocomplete="off" required/>
                 <br>
                 <label>Tipo de Instituci&oacute;n:</label>
-                <input type="text" name="tipoInst" id="TipoInst" value=""/><!--<= $institucion->getTipoInst(); ?> FALTA SIGNO DE INTERROGACION AL INICIO-->
+                <input type="text" name="tipo_institucion" id="tipo_institucion" value="<?php echo $_SESSION['tipo_institucion']?>" readonly/>
                 <br>
                 <label>Ident. Tributaria:</label>
-                <input type="text" name="ideTrib" id="IdTrib" value=""/><!--<= $institucion->getIdeTrib(); ?> FALTA SIGNO DE INTERROGACION AL INICIO-->
+                <input type="text" name="identificacion_tributaria" id="identificacion_tributaria" value="<?php echo $_SESSION['identificacion_tributaria']?>" readonly/>
         </div>
-            <input id="enviar_formulario" type="submit" value="Modificar Datos"/>
+            <input id="btn_editar" type="submit" value="Modificar Datos"/>
             </form>
     </body>
 </html>

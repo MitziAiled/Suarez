@@ -10,15 +10,10 @@ $(document).ready(function(){
 		alta_institucion();
     });
 	
-	/*//accion de consultar para adoptar
-    $("#btn_consulta_adoptar").click(function() {
-		obtener_para_adoptar();
-    });*/
-
-	/*prueba
-    $("#btn_id").click(function() {
-		obtener_id();
-	});*/
+	// accion de edición 
+	$("#btn_editar").click(function() {
+		actualiza_institucion();
+	});
 });
 
 function obtener_instituciones() {
@@ -83,6 +78,38 @@ function alta_institucion() {
         	// COMPLETAR - PROCESAR RESPUESTA
             alert(data.mensaje);
             //cargar de nuevo la página
+            location.reload();
+        },
+        error: function (xhr, status) {
+            alert("Ha ocurrido un error! " + status);
+            console.log(xhr);
+        }
+    });
+}
+
+function actualiza_institucion() {
+	// COMPLETAR - DEFINIR EL JSON A ENVIAR CON LOS DATOS DEL PRODUCTO
+	let json_institucion = {
+		idinstituciones: $("#idinstituciones").val(),
+		nombre_inst: $("#nombre_inst").val(),
+		telefono: $("#telefono").val(),
+		direccion: $("#direccion").val(),
+        codigo_postal: $("#codigo_postal").val(),
+        nombre_representante: $("#nombre_representante").val(),
+		cargo_representante: $("#cargo_representante").val(),
+		tipo_institucion: $("#tipo_institucion").val(),
+		identificacion_tributaria: $("#identificacion_tributaria").val(),
+    };
+
+	$.ajax({
+        url: '../BackEnd/institucion.php',
+        type: "PUT",
+        // COMPLETAR - ENVIAR EL JSON DEL PRODUCTO
+        data: JSON.stringify(json_institucion), // CONVERTIR EN STRING JSON
+        success: function (data) {
+        	// COMPLETAR - PROCESAR RESPUESTA
+            alert(data.mensaje);
+
             location.reload();
         },
         error: function (xhr, status) {

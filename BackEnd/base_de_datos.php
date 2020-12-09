@@ -192,27 +192,31 @@ function alta_institucion($nombre_inst, $telefono, $direccion, $codigo_postal, $
 	return ($id_insertado) ? true : false;          
 }
 
-function actualizar_institucion($idusuarios, $nombre, $apellidos ,$telefono_usuario, $direccion, $codigo_postal, $email) {
+function actualizar_institucion($idinstituciones, $nombre_inst, $telefono, $direccion, $codigo_postal, $nombre_representante, $cargo_representante, $tipo_institucion, $identificacion_tributaria){
 	$connect = conectar();
 	$sql="
-		update usuarios set 
-			nombre = :nombre,
-			apellidos = :apellidos,
-			telefono_usuario = :telefono_usuario,
+		update instituciones set 
+			nombre_inst = :nombre_inst,
+			telefono = :telefono,
 			direccion = :direccion,
 			codigo_postal = :codigo_postal,
-			email = :email
-		where idusuarios = :idusuarios";
+			nombre_representante = :nombre_representante,
+			cargo_representante = :cargo_representante,
+			tipo_institucion = :tipo_institucion,
+			identificacion_tributaria = :identificacion_tributaria
+		where idinstituciones = :idinstituciones";
 
 	$sql = $connect->prepare($sql);
 
-	$sql->bindParam(':nombre', $nombre);
-	$sql->bindParam(':apellidos', $apellidos);
-	$sql->bindParam(':telefono_usuario', $telefono_usuario);
+	$sql->bindParam(':nombre_inst', $nombre_inst);
+	$sql->bindParam(':telefono', $telefono);
 	$sql->bindParam(':direccion', $direccion);
 	$sql->bindParam(':codigo_postal', $codigo_postal);
-	$sql->bindParam(':email', $email);
-	$sql->bindParam(':idusuarios', $idusuarios);
+	$sql->bindParam(':nombre_representante', $nombre_representante);
+	$sql->bindParam(':cargo_representante', $cargo_representante);
+	$sql->bindParam(':tipo_institucion', $tipo_institucion);
+	$sql->bindParam(':identificacion_tributaria', $identificacion_tributaria);
+	$sql->bindParam(':idinstituciones', $idinstituciones);
 
 	$sql->execute();
 
@@ -332,10 +336,12 @@ function registrar_cuenta($usuario, $contrasena, $tipo_usuario){
 	return ($id_insertado) ? true : false;          
 }
 
-function actualizar_usuario($idusuarios, $telefono_usuario, $direccion, $codigo_postal, $email) {
+function actualizar_usuarios($idusuarios, $nombre, $apellidos ,$telefono_usuario, $direccion, $codigo_postal, $email) {
 	$connect = conectar();
 	$sql="
 		update usuarios set 
+			nombre = :nombre,
+			apellidos = :apellidos,
 			telefono_usuario = :telefono_usuario,
 			direccion = :direccion,
 			codigo_postal = :codigo_postal,
@@ -344,6 +350,8 @@ function actualizar_usuario($idusuarios, $telefono_usuario, $direccion, $codigo_
 
 	$sql = $connect->prepare($sql);
 
+	$sql->bindParam(':nombre', $nombre);
+	$sql->bindParam(':apellidos', $apellidos);
 	$sql->bindParam(':telefono_usuario', $telefono_usuario);
 	$sql->bindParam(':direccion', $direccion);
 	$sql->bindParam(':codigo_postal', $codigo_postal);
@@ -356,5 +364,4 @@ function actualizar_usuario($idusuarios, $telefono_usuario, $direccion, $codigo_
 
 	return ($sql->rowCount() > 0) ? true : false;
 }
-
 ?>

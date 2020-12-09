@@ -113,7 +113,7 @@ function login(){
 
 function actualiza_usuario() {
 	// COMPLETAR - DEFINIR EL JSON A ENVIAR CON LOS DATOS DEL PRODUCTO
-	let json_producto = {
+	let json_usuario = {
 		idusuarios: $("#idusuarios").val(),
 		nombre: $("#nombre").val(),
 		apellidos: $("#apellidos").val(),
@@ -127,7 +127,7 @@ function actualiza_usuario() {
         url: '../BackEnd/usuario.php',
         type: "PUT",
         // COMPLETAR - ENVIAR EL JSON DEL PRODUCTO
-        data: JSON.stringify(json_producto), // CONVERTIR EN STRING JSON
+        data: JSON.stringify(json_usuario), // CONVERTIR EN STRING JSON
         success: function (data) {
         	// COMPLETAR - PROCESAR RESPUESTA
             alert(data.mensaje);
