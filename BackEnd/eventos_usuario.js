@@ -114,7 +114,9 @@ function login(){
 function actualiza_usuario() {
 	// COMPLETAR - DEFINIR EL JSON A ENVIAR CON LOS DATOS DEL PRODUCTO
 	let json_producto = {
-        idusuarios: $("#idusuarios").val(),
+		idusuarios: $("#idusuarios").val(),
+		nombre: $("#nombre").val(),
+		apellidos: $("#apellidos").val(),
         telefono_usuario: $("#telefono_usuario").val(),
         direccion: $("#direccion").val(),
         codigo_postal: $("#codigo_postal").val(),

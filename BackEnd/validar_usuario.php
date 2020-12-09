@@ -18,10 +18,16 @@ if( isset($_POST['usuario']) && isset($_POST['contrasena'])){
         $idd = $_SESSION['idcuentas']; 
         if($datos['tipo_usuario'] == 1){
             //----------------------USUARIOS QUE SON NORMALES
-            $query2 = $conexion->query("SELECT idusuarios from usuarios where idcuentas= '$idd'");    
+            $query2 = $conexion->query("SELECT * from usuarios where idcuentas= '$idd'");    
             if($query2->rowCount() == 1){              
                 $datos2 = $query2->fetch(PDO::FETCH_ASSOC);
                 $_SESSION['idusuarios']= $datos2['idusuarios'];
+                $_SESSION['nombre']= $datos2['nombre'];
+                $_SESSION['apellidos']= $datos2['apellidos'];
+                $_SESSION['telefono_usuario']= $datos2['telefono_usuario'];
+                $_SESSION['direccion']= $datos2['direccion'];
+                $_SESSION['codigo_postal']= $datos2['codigo_postal'];
+                $_SESSION['email']= $datos2['email'];
                 echo json_encode(array('error' => false, 'rol' => $_SESSION['tipo_usuario'], 'idcuentas' =>$_SESSION['idcuentas'], 'idusuarios' =>'1'));
             }else{
                 echo json_encode(array('error' => false, 'rol' => $_SESSION['tipo_usuario'], 'idcuentas' =>$_SESSION['idcuentas'], 'idusuarios' =>'2'));

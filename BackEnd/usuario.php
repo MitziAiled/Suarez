@@ -59,14 +59,16 @@ require_once("base_de_datos.php");
 			file_get_contents("php://input")
 		);
 
-		$idusuarios = $datos_recibidos->idusuarios;
+        $idusuarios = $datos_recibidos->idusuarios;
+        $nombre = $datos_recibidos->nombre;
+        $apellidos = $datos_recibidos->apellidos;
 		$telefono_usuario = $datos_recibidos->telefono_usuario;
 		$direccion = $datos_recibidos->direccion;
 		$codigo_postal = $datos_recibidos->codigo_postal;
 		$email = $datos_recibidos->email;
 		// procesar algoritmo
 
-		$resultado = actualizar_usuario($idusuarios, $telefono_usuario, $direccion, $codigo_postal, $email);
+		$resultado = actualizar_usuario($idusuarios, $nombre, $apellidos ,$telefono_usuario, $direccion, $codigo_postal, $email);
 
 		if ($resultado !=null ) {
 			# sí se actualizó

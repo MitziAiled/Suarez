@@ -192,6 +192,34 @@ function alta_institucion($nombre_inst, $telefono, $direccion, $codigo_postal, $
 	return ($id_insertado) ? true : false;          
 }
 
+function actualizar_institucion($idusuarios, $nombre, $apellidos ,$telefono_usuario, $direccion, $codigo_postal, $email) {
+	$connect = conectar();
+	$sql="
+		update usuarios set 
+			nombre = :nombre,
+			apellidos = :apellidos,
+			telefono_usuario = :telefono_usuario,
+			direccion = :direccion,
+			codigo_postal = :codigo_postal,
+			email = :email
+		where idusuarios = :idusuarios";
+
+	$sql = $connect->prepare($sql);
+
+	$sql->bindParam(':nombre', $nombre);
+	$sql->bindParam(':apellidos', $apellidos);
+	$sql->bindParam(':telefono_usuario', $telefono_usuario);
+	$sql->bindParam(':direccion', $direccion);
+	$sql->bindParam(':codigo_postal', $codigo_postal);
+	$sql->bindParam(':email', $email);
+	$sql->bindParam(':idusuarios', $idusuarios);
+
+	$sql->execute();
+
+	$connect = null;
+
+	return ($sql->rowCount() > 0) ? true : false;
+}
 
 /********************WEB SERVICE ADOPCIONES********************/ 
 function consulta_adopcion() {
