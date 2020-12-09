@@ -53,7 +53,7 @@
             <form action="#" method="POST">
                 <label>INSTITUCI&Oacute;N:</label> 
                 <br><br>
-                <input type="text" name="idinstituciones" value="<?php echo $_SESSION['idinstituciones']?>">
+                <input type="hidden" name="idinstituciones" id="idinstituciones" value="<?php echo $_SESSION['idinstituciones']?>">
                 <label>Nombre:</label>
                 <input type="text" name="nombre_inst" id="nombre_inst" value="<?php echo $_SESSION['nombre_inst']?>" readonly/>
                 <br>
