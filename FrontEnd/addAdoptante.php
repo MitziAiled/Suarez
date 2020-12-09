@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <html>
     <head>
         <title>Puppy Rescue: Registro de Mascota</title>
@@ -55,7 +58,7 @@
                             <label>ID Instituci&oacute;n:</label>
                             <input type="text" name="idinstituciones" id="idinstituciones" value=""/>         
                             <label>ID Usuario:</label>
-                            <input type="text" name="idusuarios" id="idusuarios" value=""/>
+                            <input type="text" name="idusuarios" id="idusuarios" value="<?php echo $_SESSION['idusuarios']?>" readonly/>
                         </td>
                     </tr>
                     <tr>

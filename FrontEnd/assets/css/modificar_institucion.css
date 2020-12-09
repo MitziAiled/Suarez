@@ -17,8 +17,8 @@ body{
     height:400px;
     background-color:#36362C;
     border-radius: 50px ;
-    margin-top: -400px;
-    margin-left: 980px;
+    margin-top: -320px;
+    margin-left: 380px;
 }
 
 input{
@@ -40,7 +40,7 @@ label{
 }
 
 
-#enviar_formulario{
+#btn_editar{
     color:white;
     background-color: #825534;
     height: 30px;

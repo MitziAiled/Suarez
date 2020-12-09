@@ -42,28 +42,19 @@
         <div id="rectangle">
             <form action="#" method="POST">
                 <table>
-                <tr>
-                    <td>
-                        <input type="hidden" class="nomUs" name="idusuarios" id="idusuarios" value="<?php echo $_SESSION['idusuarios']?>" readonly/>
-                        <label>Nombre(s):</label>
-                        <input type="text" class="nomUs" name="nombre" id="nombre" value="<?php echo $_SESSION['nombre']?>" readonly/>
-                        </td>
-                    </tr>
                     <tr>
                         <td>
+                            <input type="hidden" class="nomUs" name="idusuarios" id="idusuarios" value="<?php echo $_SESSION['idusuarios']?>" readonly/>
+                            <label>Nombre(s):</label>
+                            <input type="text" class="nomUs" name="nombre" id="nombre" value="<?php echo $_SESSION['nombre']?>" readonly/>
                             <label>Apellido(s):</label>
                             <input type="text" class="apellUs" name="apellidos" id="apellidos" value="<?php echo $_SESSION['apellidos']?>" readonly/>
                         </td>
                     </tr>
                     <tr>
-                    <tr>
                         <td>
                             <label>Tel&eacute;fono:</label>
                             <input type="text" class="telUs" name="telefono_usuario" id="telefono_usuario" value="<?php echo $_SESSION['telefono_usuario']?>" autocomplete="off" required/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
                             <label>Direcci&oacute;n:</label>
                             <input type="text" class="dirUs" name="direccion" id="direccion" value="<?php echo $_SESSION['direccion']?>" autocomplete="off" required/>
                         </td>

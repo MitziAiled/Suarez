@@ -114,7 +114,7 @@ function consulta_para_adoptar(callejeros) {
 				"<td>"+callejeros[index].estado+"</td>" +
 				"<td>"+callejeros[index].rasgos_fisicos+"</td>" +
 				"<td>"+callejeros[index].condicion+"</td>" +
-				"<td><a href=addAdoptante.html?id="+callejeros[index].idcallejeros+">Adoptar</a></td"+
+				"<td><a href=addAdoptante.php?id="+callejeros[index].idcallejeros+">Adoptar</a></td"+
 			"</tr>";
 	}
 

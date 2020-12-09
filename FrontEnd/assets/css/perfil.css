@@ -20,13 +20,13 @@ label{
     margin-top: 10px;
 }
 
-.nomUs,.apellUs,.telUs,.dirUs{
+.nomUs,.apellUs,.telUs,.dirUs, .emailUs{
     margin-left: 30px;
-    width: 500px;
+    width: 330px;
     height: 30px;
     border-radius: 50px;
     position: relative;
-    margin-top: 40px;
+    margin-top: 60px;
 }
 
 .cpUs{
@@ -38,27 +38,7 @@ label{
     margin-top: 40px;
 }
 
-.passUs{
-    margin-left: 30px;
-    width: 230px;
-    height: 30px;
-    border-radius: 50px;
-    position: relative;
-    margin-top: 40px;
-}
-
-#volver{
-    background-color: #825534;
-    height: 30px;
-    width: 150px;
-    font-family: Felix Titling;
-    border-radius: 50px;
-    position: absolute; 
-    left: 740px;
-    
-}
-
-#completar{
+#btn_editar{
     color:white;
     background-color: #825534;
     height: 30px;
@@ -75,11 +55,9 @@ a{
 }
 
 table{
-    border: 2px solid black;
     margin-top: 60px;
     margin-left: 0px;
     font-family: Felix Titling;
     font-size: medium;
-    background-color: white;
     border-spacing: 15px 15px;
 }
