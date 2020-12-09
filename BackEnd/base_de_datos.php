@@ -275,17 +275,6 @@ function alta_usuario($nombre, $apellidos, $genero, $telefono_usuario, $direccio
 	return ($id_insertado) ? true : false;          
 }
 
-function consulta_idcuentas() {
-	$connect = conectar();
-	$sql = "SELECT idusuarios from usuarios where idcuentas= "  + $_SESSION['idcuentas'];
-	
-	$query = $connect -> prepare($sql); 
-	$query -> execute(); 
-	$results = $query -> fetchAll(PDO::FETCH_OBJ); 
-	
-	return $results;
-}
-
 function registrar_cuenta($usuario, $contrasena, $tipo_usuario){
     $connect = conectar();
 	$sql="        
@@ -313,6 +302,31 @@ function registrar_cuenta($usuario, $contrasena, $tipo_usuario){
 	$connect = null;
 
 	return ($id_insertado) ? true : false;          
+}
+
+function actualizar_usuario($idusuarios, $telefono_usuario, $direccion, $codigo_postal, $email) {
+	$connect = conectar();
+	$sql="
+		update usuarios set 
+			telefono_usuario = :telefono_usuario,
+			direccion = :direccion,
+			codigo_postal = :codigo_postal,
+			email = :email,
+		where idusuarios = :idusuarios";
+
+	$sql = $connect->prepare($sql);
+
+	$sql->bindParam(':telefono_usuario', $telefono_usuario);
+	$sql->bindParam(':direccion', $direccion);
+	$sql->bindParam(':codigo_postal', $codigo_postal);
+	$sql->bindParam(':email', $email);
+	$sql->bindParam(':idusuarios', $idusuarios);
+
+	$sql->execute();
+
+	$connect = null;
+
+	return ($sql->rowCount() > 0) ? true : false;
 }
 
 ?>

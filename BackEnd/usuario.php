@@ -52,6 +52,42 @@ require_once("base_de_datos.php");
             echo json_encode($respuesta);
         }
 
+    }else if($_SERVER['REQUEST_METHOD'] == 'PUT'){
+		error_log(file_get_contents("php://input"));
+		// contenido de proceso PUT
+		$datos_recibidos = json_decode(
+			file_get_contents("php://input")
+		);
+
+		$idusuarios = $datos_recibidos->idusuarios;
+		$telefono_usuario = $datos_recibidos->telefono_usuario;
+		$direccion = $datos_recibidos->direccion;
+		$codigo_postal = $datos_recibidos->codigo_postal;
+		$email = $datos_recibidos->email;
+		// procesar algoritmo
+
+		$resultado = actualizar_usuario($idusuarios, $telefono_usuario, $direccion, $codigo_postal, $email);
+
+		if ($resultado !=null ) {
+			# sí se actualizó
+			header ('Content-Type: application/json'); // la respuesta es en JSON
+
+			$respuesta = [
+				"mensaje" => "Actualización correcta"
+			];
+
+			echo json_encode($respuesta);
+		} else {
+			// no se actualizó
+			header ('Content-Type: application/json'); // la respuesta es en JSON
+
+			$respuesta = [
+				"mensaje" => "No se pudo actualizar"
+			];
+
+			echo json_encode($respuesta);
+		}
+
     }else{
         echo "Hubo un error";
     }
