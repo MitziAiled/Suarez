@@ -51,11 +51,11 @@
                                 <option>Femenino</option>
                                 <option>Masculino</option>
                             </select>
-                            <input type="text" class="cpUs" name="idcuentas" id="idcuentas" autocomplete="off" value="<?php echo $_SESSION['idcuentas']?>" readonly/>
+                            <input type="hidden" class="cpUs" name="idcuentas" id="idcuentas" autocomplete="off" value="<?php echo $_SESSION['idcuentas']?>" readonly/>
                         </td>
                     </tr>
                 </table>
-                <input type="submit" id="enviar_formulario" value="Siguiente" />
+                <input type="submit" id="enviar_formulario" value="Guardar" />
             </form>
         </div>
     </body>

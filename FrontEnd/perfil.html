@@ -33,22 +33,30 @@
 			</ul>
 		</div>
         <div id="rectangle">
-            <form action="" method="POST">
+            <form action="bienvenida.html" method="POST">
                 <table>
-                    <thead>
-                        <th>ID</th>
-                        <th>Nombre</th>
-                        <th>Apellido</th>
-                        <th>Tel&eacute;fono</th>
-                        <th>Direcci&oacute;n</th>
-                        <th>CP</th>
-                        <th>Usuario</th>
-                        <th>Contrase&ntilde;a</th>
-                        <th>Editar</th>
-                    </thead>
-                    <tbody id="">
-                    </tbody>
+                    <tr>
+                        <td>
+                            <label>Tel&eacute;fono:</label>
+                            <input type="text" class="telUs" name="telefono_usuario" id="telefono_usuario" autocomplete="off" required/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Direcci&oacute;n:</label>
+                            <input type="text" class="dirUs" name="direccion" id="direccion" autocomplete="off" required/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>C.P:</label>
+                            <input type="text" class="cpUs" name="codigo_postal" id="codigo_postal" autocomplete="off" required/>
+                            <label>Correo Electr&oacute;nico:</label>
+                            <input type="text" class="emailUs" name="email" id="email" autocomplete="off" required/>
+                       </td> 
+                    </tr>
                 </table>
+                <input type="submit" id="enviar_formulario" value="Actualizar" />
             </form>
         </div>
     </body>

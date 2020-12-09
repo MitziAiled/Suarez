@@ -311,7 +311,7 @@ function actualizar_usuario($idusuarios, $telefono_usuario, $direccion, $codigo_
 			telefono_usuario = :telefono_usuario,
 			direccion = :direccion,
 			codigo_postal = :codigo_postal,
-			email = :email,
+			email = :email
 		where idusuarios = :idusuarios";
 
 	$sql = $connect->prepare($sql);
