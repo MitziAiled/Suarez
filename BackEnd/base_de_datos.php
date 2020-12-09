@@ -202,7 +202,7 @@ function consulta_adopcion() {
 	usuarios.apellidos,
 	usuarios.direccion,
 	usuarios.codigo_postal,
-	usuarios.telefono,
+	usuarios.telefono_usuario,
 	usuarios.genero,
 	usuarios.email,
 	adopciones.ocupacion_adoptante,

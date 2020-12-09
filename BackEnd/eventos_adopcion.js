@@ -17,7 +17,6 @@ function obtener_adopciones() {
             // COMPLETAR - VERIFICAR QUE EXISTAN LAS ADOPCIONES
             if (data.adopciones) {
                 // COMPLETAR - LOS DATOS EN LA TABLA
-                 console.log("Estoy aqui");
                 consulta_adopcion(data.adopciones);
             }
         },
@@ -37,7 +36,7 @@ function consulta_adopcion(adopciones) {
                 "<td>"+adopciones[index].apellidos+"</td>" +
                 "<td>"+adopciones[index].direccion+"</td>" +
                 "<td>"+adopciones[index].codigo_postal+"</td>" +
-                "<td>"+adopciones[index].telefono+"</td>" +
+                "<td>"+adopciones[index].telefono_usuario+"</td>" +
                 "<td>"+adopciones[index].genero+"</td>" +
                 "<td>"+adopciones[index].email+"</td>" +
                 "<td>"+adopciones[index].ocupacion_adoptante+"</td>" +

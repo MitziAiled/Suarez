@@ -55,8 +55,5 @@
         </div>
                 <input id="enviar_formulario" type="submit" value="Siguiente"/>
             </form>
-            <button id="volver">
-                <a href="login.html">Volver</a> <!--Verificar si esto es correcto ya que antes era "../"-->
-            </button>
     </body>
 </html>

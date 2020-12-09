@@ -46,7 +46,7 @@ function consulta_institucion(instituciones) {
 	for (let index in instituciones) {
 		html += "<tr class='text-center'>" +
 				"<td>"+instituciones[index].idinstituciones+"</td>" +
-				"<td>"+instituciones[index].nombre+"</td>" +
+				"<td>"+instituciones[index].nombre_inst+"</td>" +
 				"<td>"+instituciones[index].telefono+"</td>" +
 				"<td>"+instituciones[index].direccion+"</td>" +
 				"<td>"+instituciones[index].codigo_postal+"</td>" +

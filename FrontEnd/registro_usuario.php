@@ -55,11 +55,8 @@
                         </td>
                     </tr>
                 </table>
-                <button type="submit" id="enviar_formulario">SIGUIENTE</button>
+                <input type="submit" id="enviar_formulario" value="Siguiente" />
             </form>
-            <button id="volver">
-                <a href="login.html">Volver</a>
-            </button>
         </div>
     </body>
 </html>
